@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Brad Sherman</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <button class="nav-toggle" onclick="document.querySelector('.sidebar').classList.toggle('sidebar--open')" aria-label="Toggle navigation">&#9776;</button>
+
+  <aside class="sidebar">
+    <div class="sidebar__logo"><a href="index.html">BRAD<br>SHERMAN</a></div>
+    <nav class="sidebar__nav">
+      <span class="sidebar__section-label">Work</span>
+      <a href="branding.html" class="sidebar__link">Branding & Identity</a>
+      <a href="campaigns.html" class="sidebar__link">Campaigns</a>
+      <a href="editorial.html" class="sidebar__link">Editorial & Publication</a>
+      <a href="poster-print.html" class="sidebar__link">Poster & Print</a>
+      <a href="social-digital.html" class="sidebar__link">Social Media & Digital</a>
+      <a href="websites.html" class="sidebar__link">Websites</a>
+    </nav>
+    <div class="sidebar__bottom">
+      <a href="about.html" class="sidebar__link sidebar__link--active">About</a>
+      <a href="contact.html" class="sidebar__link">Contact</a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="main__inner">
+
+      <div class="page-header">
+        <h1 class="page-header__title">About</h1>
+      </div>
+
+      <div class="about-layout">
+
+        <!-- IMAGE: Your headshot or professional photo -->
+        <img src="images_1/about_photo.jpg" alt="Brad Sherman" class="about__photo">
+
+        <div class="about__text">
+          <h2>Brad Sherman</h2>
+
+          <!-- UPDATE: Edit this bio to match your voice. This is a starting point. -->
+          <p>
+            I'm a graphic designer and illustrator based in Madison, WI, graduating from the University of Wisconsin-Madison. My work spans branding, campaign design, editorial layout, poster and print design, and social media — with a strong foundation in illustration that runs through everything I make.
+          </p>
+          <p>
+            I studied abroad at SRISA in Florence, Italy, where I developed work exploring Italian typography, currency design, and visual culture. Back at UW-Madison, I served as the sole graphic designer for the IceCube Neutrino Observatory (WIPAC), creating all visual communications across social, print, and digital. I also interned at Saatchi & Saatchi Wellness as an art director on a public health campaign.
+          </p>
+          <p>
+            I'm drawn to projects that require both visual craft and strategic thinking — building brand systems, designing multi-platform campaigns, and creating work that communicates clearly at every scale. I'm looking for opportunities at agencies and studios where I can bring this range to real-world branding and design challenges.
+          </p>
+
+          <div class="about__details">
+            <div>
+              <span class="about__detail-label">Education</span>
+              <p class="about__detail-value">University of Wisconsin-Madison<br>SRISA, Florence, Italy (Study Abroad)</p>
+            </div>
+            <div>
+              <span class="about__detail-label">Experience</span>
+              <p class="about__detail-value">Saatchi & Saatchi Wellness — Art Director Intern<br>WIPAC / IceCube Neutrino Observatory — Graphic Designer</p>
+            </div>
+            <div>
+              <span class="about__detail-label">Skills</span>
+              <p class="about__detail-value">Brand Identity, Campaign Design, Editorial Layout, Illustration, Typography, Social Media Design, Print Design, Adobe Creative Suite, HTML & CSS</p>
+            </div>
+          </div>
+
+          <!-- UPDATE: Link to your actual resume PDF in the images_1 folder or a /docs folder -->
+          <a href="images_1/brad_sherman_resume.pdf" class="about__resume-link">Download Resume (PDF)</a>
+
+        </div>
+      </div>
+
+      <footer class="footer">
+        &copy; 2026 Brad Sherman. All rights reserved.
+      </footer>
+
+    </div>
+  </main>
+
+</body>
+</html>

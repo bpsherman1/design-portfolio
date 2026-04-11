@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Brad Sherman</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <button class="nav-toggle" onclick="document.querySelector('.sidebar').classList.toggle('sidebar--open')" aria-label="Toggle navigation">&#9776;</button>
+
+  <aside class="sidebar">
+    <div class="sidebar__logo"><a href="index.html">BRAD<br>SHERMAN</a></div>
+    <nav class="sidebar__nav">
+      <span class="sidebar__section-label">Work</span>
+      <a href="branding.html" class="sidebar__link">Branding & Identity</a>
+      <a href="campaigns.html" class="sidebar__link">Campaigns</a>
+      <a href="editorial.html" class="sidebar__link">Editorial & Publication</a>
+      <a href="poster-print.html" class="sidebar__link">Poster & Print</a>
+      <a href="social-digital.html" class="sidebar__link">Social Media & Digital</a>
+      <a href="websites.html" class="sidebar__link">Websites</a>
+    </nav>
+    <div class="sidebar__bottom">
+      <a href="about.html" class="sidebar__link">About</a>
+      <a href="contact.html" class="sidebar__link sidebar__link--active">Contact</a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="main__inner">
+
+      <div class="page-header">
+        <h1 class="page-header__title">Contact</h1>
+        <p class="page-header__subtitle">Let's connect — I'm currently looking for graphic design and branding roles.</p>
+      </div>
+
+      <div class="contact-layout">
+
+        <div class="contact__info">
+          <h2>Get in Touch</h2>
+          <p>I'm open to full-time positions, freelance projects, and collaborations. Feel free to reach out through any of the channels below or use the contact form.</p>
+
+          <div class="contact__links">
+            <div class="contact__link-item">
+              <span>Email</span>
+              <!-- UPDATE: Replace with your actual email -->
+              <a href="mailto:your.email@gmail.com">your.email@gmail.com</a>
+            </div>
+            <div class="contact__link-item">
+              <span>LinkedIn</span>
+              <!-- UPDATE: Replace with your actual LinkedIn URL -->
+              <a href="#" target="_blank" rel="noopener">linkedin.com/in/bradsherman</a>
+            </div>
+            <div class="contact__link-item">
+              <span>Instagram</span>
+              <!-- UPDATE: Replace with your actual Instagram handle -->
+              <a href="#" target="_blank" rel="noopener">@bradsherman.design</a>
+            </div>
+            <div class="contact__link-item">
+              <span>Art Portfolio</span>
+              <a href="https://bradsherman.art" target="_blank" rel="noopener">bradsherman.art</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact__form" action="#" method="POST">
+          <!-- NOTE: For a static site, you'll need a form service like Formspree (formspree.io)
+               or Netlify Forms. Replace the action="#" with your form endpoint.
+               Example with Formspree: action="https://formspree.io/f/YOUR_FORM_ID" -->
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+
+      </div>
+
+      <footer class="footer">
+        &copy; 2026 Brad Sherman. All rights reserved.
+      </footer>
+
+    </div>
+  </main>
+
+</body>
+</html>
