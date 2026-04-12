@@ -252,6 +252,12 @@ a {
   padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-4xl);
 }
 
+/* Homepage: let grid go full width */
+.main__inner--home {
+  max-width: none;
+  padding: 0 0 var(--spacing-4xl);
+}
+
 /* --- Homepage Grid --- */
 .home-grid {
   display: grid;
@@ -283,7 +289,7 @@ a {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center center;
+  object-position: center top;
   transition: transform 0.5s var(--ease-smooth);
 }
 
