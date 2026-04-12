@@ -582,12 +582,12 @@ a {
 /* Row 2 & 3: all ~0.80 ratio portraits, equal columns */
 .poster-mosaic__row--mid {
   grid-template-columns: repeat(4, 1fr);
-  height: 220px;
+  height: 250px;
 }
 
 .poster-mosaic__row--bottom {
   grid-template-columns: repeat(4, 1fr);
-  height: 240px;
+  height: 270px;
 }
 
 .poster-mosaic img {
