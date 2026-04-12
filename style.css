@@ -575,23 +575,20 @@ a {
 
 .poster-mosaic__row1 {
   grid-template-columns: 1fr 1fr 2fr;
-  height: 280px;
 }
 
 .poster-mosaic__row2 {
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  height: 220px;
 }
 
 .poster-mosaic__row3 {
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  height: 280px;
 }
 
 .poster-mosaic img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
