@@ -256,14 +256,14 @@ a {
 .home-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-lg);
+  gap: 0;
 }
 
 .home-card {
   position: relative;
   overflow: hidden;
   border-radius: 0;
-  background: var(--bg);
+  background: var(--bg-off);
   cursor: pointer;
   display: block;
   transition: opacity 0.3s;
@@ -275,13 +275,15 @@ a {
 
 .home-card__image-wrap {
   overflow: hidden;
-  background: var(--bg-off);
+  aspect-ratio: 4 / 3;
 }
 
 .home-card__image {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
+  object-position: center center;
   transition: transform 0.5s var(--ease-smooth);
 }
 
@@ -309,7 +311,8 @@ a {
 
 /* Card label below image */
 .home-card__label {
-  padding: var(--spacing-sm) 0;
+  padding: var(--spacing-sm) var(--spacing-md);
+  padding-bottom: var(--spacing-lg);
 }
 
 .home-card__label-title {
