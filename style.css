@@ -51,9 +51,12 @@
   --spacing-xs: 8px;
   --spacing-sm: 16px;
   --spacing-md: 24px;
-  --spacing-lg: 40px;
-  --spacing-xl: 64px;
-  --spacing-xxl: 96px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+  --spacing-3xl: 80px;
+  --spacing-4xl: 96px;
+  --spacing-5xl: 120px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.45, 0, 0.15, 1);
 }
@@ -239,7 +242,7 @@ a {
 .main__inner {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xxl);
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-4xl);
 }
 
 /* --- Homepage Grid --- */
@@ -317,8 +320,8 @@ a {
 
 /* --- Page Header --- */
 .page-header {
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-3xl);
+  padding-bottom: var(--spacing-xl);
   border-bottom: 3px solid var(--black);
 }
 
@@ -341,7 +344,7 @@ a {
 
 /* --- Project Section --- */
 .project {
-  margin-bottom: var(--spacing-xxl);
+  margin-bottom: var(--spacing-4xl);
 }
 
 .project:last-child {
@@ -352,11 +355,11 @@ a {
   width: 60px;
   height: 3px;
   background: var(--red);
-  margin-bottom: var(--spacing-xxl);
+  margin-bottom: var(--spacing-4xl);
 }
 
 .project__header {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
 }
 
 .project__title {
@@ -381,7 +384,7 @@ a {
   color: var(--dark-gray);
   max-width: 680px;
   line-height: 1.75;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
 }
 
 .project__link {
@@ -421,7 +424,7 @@ a {
 .img-full {
   width: 100%;
   border-radius: 0;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
   max-height: 80vh;
   object-fit: contain;
 }
@@ -431,7 +434,7 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
 }
 
 .img-grid-2 img {
@@ -444,7 +447,7 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
 }
 
 .img-grid-3 img {
@@ -489,8 +492,8 @@ a {
   color: var(--medium-gray);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: var(--spacing-md);
-  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-3xl);
 }
 
 /* When section label is the first child (no content above), reduce top margin */
@@ -534,9 +537,13 @@ a {
 .naples-logo-feature {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-2xl);
   align-items: center;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.naples-logo-feature .project__description:last-child {
+  margin-bottom: 0;
 }
 
 .naples-logo-feature img {
@@ -551,6 +558,11 @@ a {
   .naples-logo-feature {
     grid-template-columns: 1fr;
   }
+}
+
+/* --- Poster Gallery at top of page --- */
+.poster-gallery {
+  margin-bottom: var(--spacing-2xl);
 }
 
 /* --- Visual Gallery (no descriptions, just images) --- */
@@ -775,7 +787,7 @@ a {
 
 /* --- Footer --- */
 .footer {
-  margin-top: var(--spacing-xxl);
+  margin-top: var(--spacing-4xl);
   padding-top: var(--spacing-lg);
   border-top: 1px solid var(--border);
   font-size: 0.8rem;
