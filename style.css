@@ -496,6 +496,29 @@ a {
   margin-top: 0;
 }
 
+/* --- Naples logo + text side by side --- */
+.naples-logo-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.naples-logo-feature img {
+  width: 100%;
+}
+
+.naples-logo-feature .project__description {
+  max-width: none;
+}
+
+@media (max-width: 768px) {
+  .naples-logo-feature {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* --- Visual Gallery (no descriptions, just images) --- */
 .visual-gallery {
   margin-top: var(--spacing-lg);
