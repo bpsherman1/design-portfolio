@@ -504,14 +504,15 @@ a {
   grid-template-columns: 3fr 2fr;
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
-  height: 560px;
+  height: 620px;
+  align-items: end;
 }
 
 .campaign-ads-row img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: left top;
+  object-position: left bottom;
 }
 
 @media (max-width: 768px) {
