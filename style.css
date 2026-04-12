@@ -930,6 +930,10 @@ a {
 }
 
 /* --- Gallery Hover Effect --- */
+.poster-mosaic__row {
+  overflow: visible;
+}
+
 .poster-mosaic img {
   transition: transform 0.4s var(--ease-out), opacity 0.3s, box-shadow 0.4s var(--ease-out);
   cursor: pointer;
@@ -943,10 +947,11 @@ a {
 
 .poster-mosaic__img--active {
   opacity: 1 !important;
-  transform: scale(1.05);
-  z-index: 2;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+  transform: scale(1.15);
+  z-index: 10;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   object-fit: contain !important;
+  object-position: center center !important;
 }
 
 /* Make all project images clickable */
