@@ -565,42 +565,47 @@ a {
   margin-bottom: var(--spacing-2xl);
 }
 
-.poster-mosaic__row1,
-.poster-mosaic__row2,
-.poster-mosaic__row3 {
+.poster-mosaic__row {
   display: grid;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
+  gap: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
 }
 
-.poster-mosaic__row1 {
-  grid-template-columns: 1fr 1fr 2fr;
+/* Row 1: two tall portraits (0.65 ratio) + one wide landscape (1.78 ratio) */
+/* Column widths proportional to aspect ratios so all images fill same height */
+.poster-mosaic__row--top {
+  grid-template-columns: 0.65fr 0.65fr 1.78fr;
+  height: 260px;
 }
 
-.poster-mosaic__row2 {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+/* Row 2 & 3: all ~0.80 ratio portraits, equal columns */
+.poster-mosaic__row--mid {
+  grid-template-columns: repeat(4, 1fr);
+  height: 220px;
 }
 
-.poster-mosaic__row3 {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+.poster-mosaic__row--bottom {
+  grid-template-columns: repeat(4, 1fr);
+  height: 240px;
 }
 
 .poster-mosaic img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
   display: block;
 }
 
 @media (max-width: 768px) {
-  .poster-mosaic__row1,
-  .poster-mosaic__row2,
-  .poster-mosaic__row3 {
-    grid-template-columns: 1fr 1fr;
-    height: auto;
+  .poster-mosaic__row {
+    grid-template-columns: 1fr 1fr !important;
+    height: auto !important;
   }
   .poster-mosaic img {
     height: auto;
+    object-fit: contain;
     aspect-ratio: 3 / 4;
   }
 }
