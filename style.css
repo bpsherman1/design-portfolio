@@ -47,7 +47,7 @@
   --font-heading: 'Gelica', 'Georgia', 'Times New Roman', serif;
   --font-body: 'Helvetica Neue', 'Arial', sans-serif;
   --sidebar-width: 260px;
-  --content-max: 1200px;
+  --content-max: 960px;
   --spacing-xs: 8px;
   --spacing-sm: 16px;
   --spacing-md: 24px;
@@ -422,6 +422,8 @@ a {
   width: 100%;
   border-radius: 0;
   margin-bottom: var(--spacing-lg);
+  max-height: 80vh;
+  object-fit: contain;
 }
 
 /* Two-column image grid */
