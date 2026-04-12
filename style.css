@@ -336,26 +336,26 @@ a {
 
 /* --- Page Header --- */
 .page-header {
-  margin-bottom: var(--spacing-3xl);
-  padding-bottom: var(--spacing-xl);
-  border-bottom: 3px solid var(--black);
+  margin-bottom: var(--spacing-4xl);
 }
 
 .page-header__title {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   color: var(--black);
-  line-height: 1.05;
+  line-height: 1.1;
   margin-bottom: var(--spacing-xs);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 
 .page-header__subtitle {
-  font-size: 1.05rem;
-  color: var(--medium-gray);
+  font-size: 0.875rem;
+  color: var(--light-gray);
   max-width: 600px;
   line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 /* --- Project Section --- */
