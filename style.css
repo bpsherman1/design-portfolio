@@ -498,6 +498,32 @@ a {
   margin-top: 0;
 }
 
+/* --- Campaign ads row — matched height, poster wider than phone --- */
+.campaign-ads-row {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  height: 560px;
+}
+
+.campaign-ads-row img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left top;
+}
+
+@media (max-width: 768px) {
+  .campaign-ads-row {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .campaign-ads-row img {
+    height: auto;
+  }
+}
+
 /* --- Naples logo + text side by side --- */
 .naples-logo-feature {
   display: grid;
