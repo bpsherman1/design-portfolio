@@ -1,0 +1,56 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - link "BRAD SHERMAN" [ref=e4] [cursor=pointer]:
+      - /url: index.html
+      - text: BRAD
+      - text: SHERMAN
+    - navigation [ref=e5]:
+      - generic [ref=e6]: Work
+      - link "Branding & Identity" [ref=e7] [cursor=pointer]:
+        - /url: branding.html
+      - link "Magazines" [ref=e8] [cursor=pointer]:
+        - /url: editorial.html
+      - link "Posters & Print" [ref=e9] [cursor=pointer]:
+        - /url: poster-print.html
+      - link "Campaigns" [ref=e10] [cursor=pointer]:
+        - /url: campaigns.html
+      - link "Social Media & Digital" [ref=e11] [cursor=pointer]:
+        - /url: social-digital.html
+      - link "Websites" [ref=e12] [cursor=pointer]:
+        - /url: websites.html
+    - generic [ref=e13]:
+      - link "About" [ref=e14] [cursor=pointer]:
+        - /url: about.html
+      - link "Contact" [ref=e15] [cursor=pointer]:
+        - /url: contact.html
+  - main [ref=e16]:
+    - generic [ref=e17]:
+      - heading "About" [level=1] [ref=e19]
+      - generic [ref=e20]:
+        - img "Brad Sherman" [ref=e21]
+        - generic [ref=e22]:
+          - heading "Brad Sherman" [level=2] [ref=e23]
+          - paragraph [ref=e24]: I'm a graphic designer and illustrator based in Madison, WI, graduating from the University of Wisconsin-Madison. My work spans branding, campaign design, editorial layout, poster and print design, and social media — with a strong foundation in illustration that runs through everything I make.
+          - paragraph [ref=e25]: I studied abroad at SRISA in Florence, Italy, where I developed work exploring Italian typography, currency design, and visual culture. Back at UW-Madison, I served as the sole graphic designer for the IceCube Neutrino Observatory (WIPAC), creating all visual communications across social, print, and digital. I also interned at Saatchi & Saatchi Wellness as an art director on a public health campaign.
+          - paragraph [ref=e26]: I'm drawn to projects that require both visual craft and strategic thinking — building brand systems, designing multi-platform campaigns, and creating work that communicates clearly at every scale. I'm looking for opportunities at agencies and studios where I can bring this range to real-world branding and design challenges.
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - text: Education
+              - paragraph [ref=e29]:
+                - text: University of Wisconsin-Madison
+                - text: SRISA, Florence, Italy (Study Abroad)
+            - generic [ref=e30]:
+              - text: Experience
+              - paragraph [ref=e31]:
+                - text: Saatchi & Saatchi Wellness — Art Director Intern
+                - text: WIPAC / IceCube Neutrino Observatory — Graphic Designer
+            - generic [ref=e32]:
+              - text: Skills
+              - paragraph [ref=e33]: Brand Identity, Campaign Design, Editorial Layout, Illustration, Typography, Social Media Design, Print Design, Adobe Creative Suite, HTML & CSS
+          - link "Download Resume (PDF)" [ref=e34] [cursor=pointer]:
+            - /url: images_1/brad_sherman_resume.pdf
+      - generic [ref=e35]: © 2026 Brad Sherman. All rights reserved.
+  - generic:
+    - button "×"
+    - button "←"
+    - button "→"

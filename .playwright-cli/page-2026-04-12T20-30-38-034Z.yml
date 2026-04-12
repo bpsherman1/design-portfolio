@@ -1,0 +1,59 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - link "BRAD SHERMAN" [ref=e4] [cursor=pointer]:
+      - /url: index.html
+      - text: BRAD
+      - text: SHERMAN
+    - navigation [ref=e5]:
+      - generic [ref=e6]: Work
+      - link "Branding & Identity" [ref=e7] [cursor=pointer]:
+        - /url: branding.html
+      - link "Magazines" [ref=e8] [cursor=pointer]:
+        - /url: editorial.html
+      - link "Posters & Print" [ref=e9] [cursor=pointer]:
+        - /url: poster-print.html
+      - link "Campaigns" [ref=e10] [cursor=pointer]:
+        - /url: campaigns.html
+      - link "Social Media & Digital" [ref=e11] [cursor=pointer]:
+        - /url: social-digital.html
+      - link "Websites" [ref=e12] [cursor=pointer]:
+        - /url: websites.html
+    - generic [ref=e13]:
+      - link "About" [ref=e14] [cursor=pointer]:
+        - /url: about.html
+      - link "Contact" [ref=e15] [cursor=pointer]:
+        - /url: contact.html
+  - main [ref=e16]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - heading "Magazines" [level=1] [ref=e19]
+        - paragraph [ref=e20]: Magazine layout and design.
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - heading "Fontana" [level=2] [ref=e23]
+          - paragraph [ref=e24]: 2024 — UW-Madison
+          - paragraph [ref=e25]: A typography magazine documenting Italian-American typography — from hand-painted signage to digital type design. The publication explores how Italian typographic traditions evolved after crossing the Atlantic, featuring original photography, historical research, and detailed type specimens.
+          - link "Open Magazine →" [ref=e26] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e27]:
+          - img "Fontana — Cover" [ref=e28] [cursor=pointer]
+          - img "Fontana — Spread" [ref=e29] [cursor=pointer]
+        - generic [ref=e30]:
+          - img "Fontana — Spread" [ref=e31] [cursor=pointer]
+          - img "Fontana — Spread" [ref=e32] [cursor=pointer]
+        - img "Fontana — Spread" [ref=e33] [cursor=pointer]
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - heading "Mini Encyclopedia" [level=2] [ref=e37]
+          - paragraph [ref=e38]: 2025 — UW-Madison
+          - paragraph [ref=e39]: A pocket-sized booklet exploring the world's most dangerous mountain peaks. The publication combines data visualization, dramatic photography, and tight editorial layout to present geographic and climbing data in a compact, engaging format.
+        - generic [ref=e40]:
+          - img "Mini Encyclopedia — Cover" [ref=e41] [cursor=pointer]
+          - img "Mini Encyclopedia — Mockup with Spreads" [ref=e42] [cursor=pointer]
+        - img "Mini Encyclopedia — K2 Spread" [ref=e43] [cursor=pointer]
+        - img "Mini Encyclopedia — Spread" [ref=e44] [cursor=pointer]
+      - generic [ref=e45]: © 2026 Brad Sherman. All rights reserved.
+  - generic:
+    - button "×"
+    - button "←"
+    - button "→"

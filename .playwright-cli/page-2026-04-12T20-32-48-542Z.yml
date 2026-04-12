@@ -1,0 +1,72 @@
+- generic [active] [ref=e1]:
+  - button "Toggle navigation" [ref=e2] [cursor=pointer]: ☰
+  - complementary [ref=e3]:
+    - link "BRAD SHERMAN" [ref=e5] [cursor=pointer]:
+      - /url: index.html
+      - text: BRAD
+      - text: SHERMAN
+    - navigation [ref=e6]:
+      - generic [ref=e7]: Work
+      - link "Branding & Identity" [ref=e8] [cursor=pointer]:
+        - /url: branding.html
+      - link "Magazines" [ref=e9] [cursor=pointer]:
+        - /url: editorial.html
+      - link "Posters & Print" [ref=e10] [cursor=pointer]:
+        - /url: poster-print.html
+      - link "Campaigns" [ref=e11] [cursor=pointer]:
+        - /url: campaigns.html
+      - link "Social Media & Digital" [ref=e12] [cursor=pointer]:
+        - /url: social-digital.html
+      - link "Websites" [ref=e13] [cursor=pointer]:
+        - /url: websites.html
+    - generic [ref=e14]:
+      - link "About" [ref=e15] [cursor=pointer]:
+        - /url: about.html
+      - link "Contact" [ref=e16] [cursor=pointer]:
+        - /url: contact.html
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - heading "Work" [level=1] [ref=e20]
+        - paragraph [ref=e21]: Selected projects in branding, campaigns, editorial, print, and digital design.
+      - generic [ref=e22]:
+        - link "Branding & Identity Branding & Identity Naples 15, Caffe Buzzino" [ref=e23] [cursor=pointer]:
+          - /url: branding.html
+          - img "Branding & Identity" [ref=e25]
+          - generic [ref=e26]:
+            - generic [ref=e27]: Branding & Identity
+            - generic [ref=e28]: Naples 15, Caffe Buzzino
+        - link "Magazines Magazines Fontana, Mini Encyclopedia" [ref=e29] [cursor=pointer]:
+          - /url: editorial.html
+          - img "Magazines" [ref=e31]
+          - generic [ref=e32]:
+            - generic [ref=e33]: Magazines
+            - generic [ref=e34]: Fontana, Mini Encyclopedia
+        - link "Posters & Print Posters & Print Posters, Currency, Album Art, Illustration" [ref=e35] [cursor=pointer]:
+          - /url: poster-print.html
+          - img "Posters & Print" [ref=e37]
+          - generic [ref=e38]:
+            - generic [ref=e39]: Posters & Print
+            - generic [ref=e40]: Posters, Currency, Album Art, Illustration
+        - link "Campaigns Campaigns Saatchi & Saatchi, Social Impact, Editorial" [ref=e41] [cursor=pointer]:
+          - /url: campaigns.html
+          - img "Campaigns" [ref=e43]
+          - generic [ref=e44]:
+            - generic [ref=e45]: Campaigns
+            - generic [ref=e46]: Saatchi & Saatchi, Social Impact, Editorial
+        - link "Social Media & Digital UW-Madison IceCube Research Center" [ref=e47] [cursor=pointer]:
+          - /url: social-digital.html
+          - generic [ref=e48]:
+            - generic [ref=e49]: Social Media & Digital
+            - generic [ref=e50]: UW-Madison IceCube Research Center
+        - link "Websites Websites Farfalle, Art Portfolio" [ref=e51] [cursor=pointer]:
+          - /url: websites.html
+          - img "Websites" [ref=e53]
+          - generic [ref=e54]:
+            - generic [ref=e55]: Websites
+            - generic [ref=e56]: Farfalle, Art Portfolio
+      - generic [ref=e57]: © 2026 Brad Sherman. All rights reserved.
+  - generic:
+    - button "×"
+    - button "←"
+    - button "→"

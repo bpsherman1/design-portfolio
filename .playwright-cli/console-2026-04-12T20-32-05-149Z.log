@@ -1,0 +1,2 @@
+[      26ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8765/fonts/gelica-bold.woff2:0
+[      26ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8765/fonts/gelica-regular.woff2:0
