@@ -1,0 +1,74 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - link "BRAD SHERMAN" [ref=e9] [cursor=pointer]:
+        - /url: /work
+    - navigation [ref=e10]:
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "Work" [ref=e13] [cursor=pointer]:
+            - /url: /work
+        - listitem [ref=e14]:
+          - link "Branding and Identity" [ref=e15] [cursor=pointer]:
+            - /url: /branding
+        - listitem [ref=e16]:
+          - link "Magazines" [ref=e17] [cursor=pointer]:
+            - /url: /typography
+        - listitem [ref=e18]:
+          - link "Posters and Print" [ref=e19] [cursor=pointer]:
+            - /url: /graphics
+        - listitem [ref=e20]:
+          - link "Campaigns" [ref=e21] [cursor=pointer]:
+            - /url: /campaigns
+        - listitem [ref=e22]:
+          - link "Social Media and Digital" [ref=e23] [cursor=pointer]:
+            - /url: /work-at-wipac
+        - listitem [ref=e24]:
+          - link "Websites" [ref=e25] [cursor=pointer]:
+            - /url: /websites
+      - link "Contact" [ref=e27] [cursor=pointer]:
+        - /url: /contact
+      - generic:
+        - list
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - heading "Magazines" [level=1] [ref=e32]
+          - paragraph [ref=e33]: Magazine layout and design
+        - generic [ref=e36]:
+          - generic [ref=e38]:
+            - generic [ref=e41]: FONTANA
+            - generic [ref=e43]: "2024"
+            - generic [ref=e45]: UW-MADISON
+            - generic [ref=e46]:
+              - generic [ref=e48]: Fontana is a typography magazine completed at the end of 2024. The magazine is both a photographic survey of Italian-American typography as well as a process documentation of all the projects I completed throughout my typography class. Fontana is probably my favorite graphic project I've designed.
+              - link "Open Magazine" [ref=e50] [cursor=pointer]:
+                - /url: https://indd.adobe.com/view/89f839a3-2ac9-479f-ae40-9bf9ba49699f
+                - generic [ref=e52]: Open Magazine
+          - generic [ref=e54]:
+            - img [ref=e58]
+            - img [ref=e62]
+          - generic [ref=e64]:
+            - img [ref=e66]
+            - img [ref=e69]
+          - generic [ref=e72]:
+            - generic [ref=e75]: Mini Encyclopedia
+            - generic [ref=e77]: "2025"
+            - generic [ref=e79]: UW-Madison
+            - generic [ref=e81]: Tasked with designing a Mini Encyclopedia, I wanted to highlight some of the world's highest and most dangerous peaks. The booklet features a collection of formidable mountains, highlighting key details such as their location, elevation, and the unique dangers they pose to climbers.
+          - generic [ref=e83]:
+            - img [ref=e87]
+            - img [ref=e91]
+          - img [ref=e95]
+      - link "↑ Back to Top" [ref=e98] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e99]: ↑
+        - text: Back to Top
+      - link:
+        - /url: "#"
+        - img
+    - generic [ref=e103]:
+      - text: Powered by
+      - link "Adobe Portfolio" [ref=e104] [cursor=pointer]:
+        - /url: http://portfolio.adobe.com

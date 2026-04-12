@@ -1,0 +1,70 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - link "BRAD SHERMAN" [ref=e9] [cursor=pointer]:
+        - /url: /work
+    - navigation [ref=e10]:
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "Work" [ref=e13] [cursor=pointer]:
+            - /url: /work
+        - listitem [ref=e14]:
+          - link "Branding and Identity" [ref=e15] [cursor=pointer]:
+            - /url: /branding
+        - listitem [ref=e16]:
+          - link "Magazines" [ref=e17] [cursor=pointer]:
+            - /url: /typography
+        - listitem [ref=e18]:
+          - link "Posters and Print" [ref=e19] [cursor=pointer]:
+            - /url: /graphics
+        - listitem [ref=e20]:
+          - link "Campaigns" [ref=e21] [cursor=pointer]:
+            - /url: /campaigns
+        - listitem [ref=e22]:
+          - link "Social Media and Digital" [ref=e23] [cursor=pointer]:
+            - /url: /work-at-wipac
+        - listitem [ref=e24]:
+          - link "Websites" [ref=e25] [cursor=pointer]:
+            - /url: /websites
+      - link "Contact" [ref=e27] [cursor=pointer]:
+        - /url: /contact
+      - generic:
+        - list
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - heading "Websites" [level=1] [ref=e32]
+          - paragraph [ref=e33]: The Food Gallery, Art portfolio
+        - generic [ref=e36]:
+          - generic [ref=e38]:
+            - img [ref=e42]
+            - generic [ref=e45]:
+              - generic [ref=e48]: The Food Gallery II
+              - generic [ref=e50]: "2025"
+              - generic [ref=e52]: HTML & CSS
+              - generic [ref=e54]: During an art and code class, I coded and designed a recipe website with some of my favorite Italian dishes. All of the food, gifs, and icons were designed, and the website is coded in HTML and CSS.
+              - link "Open" [ref=e56] [cursor=pointer]:
+                - /url: https://thefoodgallery.art/
+                - generic [ref=e57]: Open
+          - generic [ref=e59]:
+            - img [ref=e63]
+            - generic [ref=e66]:
+              - generic [ref=e69]: Portfolio
+              - generic [ref=e71]: "2025"
+              - generic [ref=e72]:
+                - generic [ref=e74]: HTML & CSS
+                - generic [ref=e76]: My Art portfolio, containing my painting, drawing, woodworkings, and photography, is all on this website I coded. I explored creating a more interactive website while creating a place to hold my artworks.
+                - link "Open" [ref=e80] [cursor=pointer]:
+                  - /url: https://bradsherman.design
+      - link "↑ Back to Top" [ref=e82] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e83]: ↑
+        - text: Back to Top
+      - link:
+        - /url: "#"
+        - img
+    - generic [ref=e87]:
+      - text: Powered by
+      - link "Adobe Portfolio" [ref=e88] [cursor=pointer]:
+        - /url: http://portfolio.adobe.com

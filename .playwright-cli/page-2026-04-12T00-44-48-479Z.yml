@@ -1,0 +1,110 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - link "BRAD SHERMAN" [ref=e9] [cursor=pointer]:
+        - /url: /work
+    - navigation [ref=e10]:
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "Work" [ref=e13] [cursor=pointer]:
+            - /url: /work
+        - listitem [ref=e14]:
+          - link "Branding and Identity" [ref=e15] [cursor=pointer]:
+            - /url: /branding
+        - listitem [ref=e16]:
+          - link "Magazines" [ref=e17] [cursor=pointer]:
+            - /url: /typography
+        - listitem [ref=e18]:
+          - link "Posters and Print" [ref=e19] [cursor=pointer]:
+            - /url: /graphics
+        - listitem [ref=e20]:
+          - link "Campaigns" [ref=e21] [cursor=pointer]:
+            - /url: /campaigns
+        - listitem [ref=e22]:
+          - link "Social Media and Digital" [ref=e23] [cursor=pointer]:
+            - /url: /work-at-wipac
+        - listitem [ref=e24]:
+          - link "Websites" [ref=e25] [cursor=pointer]:
+            - /url: /websites
+      - link "Contact" [ref=e27] [cursor=pointer]:
+        - /url: /contact
+      - generic:
+        - list
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - heading "Campaigns" [level=1] [ref=e32]
+          - paragraph [ref=e33]: Saatchi @ Saatchi, Editorials and more
+        - generic [ref=e36]:
+          - generic [ref=e38]:
+            - img [ref=e42]
+            - generic [ref=e45]:
+              - generic [ref=e48]: Cancer Won't Wait, Will You?
+              - generic [ref=e50]: "2024"
+              - generic [ref=e52]: Saatchi & Saatchi Wellness
+              - generic [ref=e54]: Cancer Won't Wait, Will You? is my final intern project in 2024. It was a collective work with 4 other interns, but as the art director, I was responsible for all the poster and ad designs, as well as the overall campaign design and slides.
+          - img [ref=e57]
+          - img [ref=e60]
+          - generic [ref=e62]:
+            - img [ref=e66]
+            - img [ref=e70]
+          - img [ref=e73]
+          - generic [ref=e75]:
+            - img [ref=e79]
+            - generic [ref=e82]:
+              - generic [ref=e85]: Advertisements
+              - generic [ref=e87]: For this project, I designed a variety of ads, particularly for either print or digital. This first ad was designed as a NYC subway sign, which could appear in a NYC subway.
+          - img [ref=e90]
+          - generic [ref=e92]:
+            - img [ref=e96]
+            - generic [ref=e99]:
+              - generic [ref=e102]: Digital Ads
+              - generic [ref=e104]: Designed for digital media, I created two layouts for both Instagram and Twitter.
+          - generic [ref=e106]:
+            - img [ref=e110]
+            - img [ref=e114]
+          - generic [ref=e116]:
+            - img [ref=e120]
+            - generic [ref=e123]:
+              - generic [ref=e126]: Physical Ad
+              - generic [ref=e128]: Lastly, we wanted to design a physical advertisement, so we created an info card that can be handed out.
+          - generic [ref=e130]:
+            - img [ref=e134]
+            - img [ref=e138]
+          - generic [ref=e140]:
+            - img [ref=e144]
+            - generic [ref=e147]:
+              - generic [ref=e150]: Stop Climate Change, Prevent Wildfires
+              - generic [ref=e153]: "2024"
+              - generic [ref=e156]: UW-Madison
+              - generic [ref=e158]: This project was inspired by the increasing threat of wildfires and explores the link between climate change and its growing intensity. For this campaign, I created a series of visuals, including posters, editorial layouts, advertisements, and mockups. I wanted to highlight how easily a wildfire could start with the match, but also the devastation it could create.
+          - generic [ref=e160]:
+            - img [ref=e162]
+            - img [ref=e165]
+          - img [ref=e169]
+          - generic [ref=e171]:
+            - img [ref=e175]
+            - generic [ref=e178]:
+              - generic [ref=e181]: Protect our Parks
+              - generic [ref=e183]: "2024"
+              - generic [ref=e185]: UW-Madison
+              - generic [ref=e187]: Protect our Parks was a project I created after an inspiring trip out west to Yellowstone and the Grand Tetons. I designed fun posts to highlight the park's natural beauty while drawing attention to things affecting them.
+          - generic [ref=e189]:
+            - img [ref=e191]
+            - img [ref=e194]
+            - img [ref=e197]
+          - generic [ref=e200]:
+            - img [ref=e204]
+            - img [ref=e208]
+      - link "↑ Back to Top" [ref=e210] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e211]: ↑
+        - text: Back to Top
+      - link:
+        - /url: "#"
+        - img
+    - generic [ref=e215]:
+      - text: Powered by
+      - link "Adobe Portfolio" [ref=e216] [cursor=pointer]:
+        - /url: http://portfolio.adobe.com

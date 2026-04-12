@@ -1,0 +1,119 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - link "BRAD SHERMAN" [ref=e9] [cursor=pointer]:
+        - /url: /work
+    - navigation [ref=e10]:
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "Work" [ref=e13] [cursor=pointer]:
+            - /url: /work
+        - listitem [ref=e14]:
+          - link "Branding and Identity" [ref=e15] [cursor=pointer]:
+            - /url: /branding
+        - listitem [ref=e16]:
+          - link "Magazines" [ref=e17] [cursor=pointer]:
+            - /url: /typography
+        - listitem [ref=e18]:
+          - link "Posters and Print" [ref=e19] [cursor=pointer]:
+            - /url: /graphics
+        - listitem [ref=e20]:
+          - link "Campaigns" [ref=e21] [cursor=pointer]:
+            - /url: /campaigns
+        - listitem [ref=e22]:
+          - link "Social Media and Digital" [ref=e23] [cursor=pointer]:
+            - /url: /work-at-wipac
+        - listitem [ref=e24]:
+          - link "Websites" [ref=e25] [cursor=pointer]:
+            - /url: /websites
+      - link "Contact" [ref=e27] [cursor=pointer]:
+        - /url: /contact
+      - generic:
+        - list
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - heading "Posters and Print" [level=1] [ref=e32]
+          - paragraph [ref=e33]: Posters, currency, album art, and more
+        - generic [ref=e36]:
+          - generic [ref=e38]:
+            - img [ref=e40]
+            - img [ref=e43]
+            - img [ref=e46]
+            - img [ref=e49]
+            - img [ref=e52]
+            - img [ref=e55]
+            - img [ref=e58]
+            - img [ref=e61]
+            - img [ref=e64]
+            - img [ref=e67]
+            - img [ref=e70]
+          - img [ref=e74]
+          - generic [ref=e76]:
+            - img [ref=e80]
+            - generic [ref=e83]:
+              - generic [ref=e86]: Architecture in Madison
+              - generic [ref=e88]: "2025"
+              - generic [ref=e90]: UW-Madison
+              - generic [ref=e92]: For this project, we had to design a map calling out destinations around Madison. I decided to map out my favorite architecture across the city. We had to use Destination Madison's logo, colors, and typography while picking a unique theme. The map itself resembles a blueprint design, and each building's layout is then highlighted. I used a variety of different architectural styles, such as brutalist, organic, and different Italian revivals.
+          - generic [ref=e94]:
+            - generic [ref=e97]:
+              - generic [ref=e100]: The New Yorker Slideshow
+              - generic [ref=e102]: "2025"
+              - generic [ref=e104]: UW-Madison
+              - generic [ref=e106]: "For this project, we had to design a 10-page slideshow representing 10 different movies. I chose to focus on intense movies and split the project into 3 sections: boxing, mafia, and war. To ensure each section was unique, I developed separate designs for each, then blended and combined them to create a cohesive overall look through the slideshow."
+              - generic [ref=e108]: The design guidelines required me to approach the project as if I were working for The New Yorker. To accomplish this, I used their signature fonts, color palette, and illustrative cover style.
+            - img [ref=e112]
+          - img [ref=e115]
+          - generic [ref=e117]:
+            - img [ref=e119]
+            - img [ref=e122]
+            - img [ref=e125]
+          - generic [ref=e128]:
+            - img [ref=e132]
+            - generic [ref=e135]:
+              - generic [ref=e138]: Badgers in the Olympics Poster
+              - generic [ref=e140]: "2025"
+              - generic [ref=e142]: UW-Madison
+              - generic [ref=e144]: The goal of this project was to visually represent data regarding Olympic medalists who attended the University of Wisconsin-Madison. To organize the information meaningfully, I chose to categorize the medalists based on the campus locations where their respective sports are played. I designed each of the campus buildings and a chronological timeline connecting back to each sport.
+          - generic [ref=e146]:
+            - img [ref=e150]
+            - generic [ref=e153]:
+              - generic [ref=e156]: Italian Lira Redesign
+              - generic [ref=e158]: "2025"
+              - generic [ref=e160]: SRISA
+              - generic [ref=e162]: This project challenged us to redesign three Italian Lira bills. We had to keep the iconography and copy, but had to redesign them in a modern way. Drawing inspiration from traditional Italian tile patterns, I designed a cohensive series featuring both the front and back designs for each of the three bills.
+          - generic [ref=e164]:
+            - img [ref=e166]
+            - img [ref=e169]
+          - generic [ref=e172]:
+            - img [ref=e174]
+            - img [ref=e177]
+          - generic [ref=e180]:
+            - img [ref=e182]
+            - img [ref=e185]
+          - generic [ref=e188]:
+            - img [ref=e192]
+            - generic [ref=e195]:
+              - generic [ref=e198]: Retro Italian Album Cover Redesign
+              - generic [ref=e200]: "2025"
+              - generic [ref=e202]: SRISA
+              - generic [ref=e204]: I didn't know where to start with this project, as I usually make illustrations, but I decided to work with photography. I thought an illustration wouldn't be able to represent this original cover. I found a photo I had taken, messed with it in Photoshop, and designed the text. Then I wanted to make the image go from the cover to the back, which looked really cool on the final printed sleeve.
+          - generic [ref=e207]:
+            - img [ref=e209]
+            - img [ref=e212]
+          - generic [ref=e215]:
+            - img [ref=e217]
+            - img [ref=e220]
+      - link "↑ Back to Top" [ref=e223] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e224]: ↑
+        - text: Back to Top
+      - link:
+        - /url: "#"
+        - img
+    - generic [ref=e228]:
+      - text: Powered by
+      - link "Adobe Portfolio" [ref=e229] [cursor=pointer]:
+        - /url: http://portfolio.adobe.com
