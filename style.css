@@ -494,7 +494,8 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: var(--spacing-sm);
+  margin-top: calc(var(--spacing-md) * -1);
+  margin-bottom: var(--spacing-md);
   font-size: 0.875rem;
   color: var(--red);
   font-weight: 500;
