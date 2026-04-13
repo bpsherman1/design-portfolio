@@ -17,6 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   reveals.forEach(el => observer.observe(el));
 
+  // Float-up reveal (homepage intro)
+  const floats = document.querySelectorAll('.reveal-float');
+  const floatObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-float--visible');
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  floats.forEach(el => floatObserver.observe(el));
+
   // Close mobile nav when clicking a link
   document.querySelectorAll('.sidebar__link').forEach(link => {
     link.addEventListener('click', () => {
@@ -86,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateLightbox() {
     const img = currentImages[currentIndex];
-    lbImg.src = img.src;
+    lbImg.src = img.dataset.full || img.src;
     lbImg.alt = img.alt;
     lbInfo.textContent = currentProjectName + '  ' + (currentIndex + 1) + ' / ' + currentImages.length;
 

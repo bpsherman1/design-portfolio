@@ -1,1 +1,19 @@
 .DS_Store
+.playwright-cli/
+portfolio-review/
+IMAGE_CHECKLIST.md
+images_2/
+updates/
+node_modules/
+*.log
+
+# Dev screenshots
+branding_top.png
+branding_bottom.png
+about_mid.png
+campaigns_top.png
+index_top.png
+mobile_index.png
+mobile_nav.png
+lightbox_test.png
+lightbox_arrow.png
