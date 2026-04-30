@@ -670,10 +670,17 @@ a {
 }
 
 /* Brand-book page slices: stack flush with zero gap so the rendered PDF
-   reads as one continuous document, not a sequence of separate images. */
+   reads as one continuous document, not a sequence of separate images.
+   Override the .img-full max-height/object-fit cap (which letterboxes
+   tall portrait pages down to thumbnails) using !important — needed
+   because .img-full's rule appears later in the cascade. */
 .img-full--book {
   margin-bottom: 0 !important;
-  display: block;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: fill !important;
 }
 .img-full--book + .img-full--book {
   margin-top: -1px; /* hide hairline antialiasing seam between slices */
