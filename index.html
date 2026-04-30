@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brad Sherman — Design Portfolio</title>
-  <meta name="description" content="Design portfolio of Brad Sherman — branding, campaigns, editorial layout, posters, and social media. UW-Madison graduate with experience at Saatchi & Saatchi Wellness and the IceCube Neutrino Observatory.">
+  <meta name="description" content="Design portfolio of Brad Sherman — branding, rebranding, campaigns, editorial layout, posters, and websites. UW-Madison graduate with experience at Saatchi & Saatchi Wellness and the IceCube Neutrino Observatory.">
   <meta property="og:title" content="Brad Sherman — Design Portfolio">
-  <meta property="og:description" content="Design portfolio of Brad Sherman — branding, campaigns, editorial layout, posters, and social media. UW-Madison graduate with experience at Saatchi & Saatchi Wellness and the IceCube Neutrino Observatory.">
+  <meta property="og:description" content="Design portfolio of Brad Sherman — branding, rebranding, campaigns, editorial layout, posters, and websites. UW-Madison graduate with experience at Saatchi & Saatchi Wellness and the IceCube Neutrino Observatory.">
   <meta property="og:image" content="https://bpsherman1.github.io/design-portfolio/images_1/MOC5.png">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="images_1/fav.png">
@@ -15,7 +15,7 @@
 <body>
 
   <!-- Mobile Nav Toggle -->
-  <button class="nav-toggle" onclick="document.querySelector('.sidebar').classList.toggle('sidebar--open')" aria-label="Toggle navigation">&#9776;</button>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span class="nav-toggle__icon"></span></button>
 
   <!-- Sidebar Navigation -->
   <aside class="sidebar">
@@ -23,10 +23,10 @@
 
     <nav class="sidebar__nav">
       <a href="branding.html" class="sidebar__link">Branding & Identity</a>
+      <a href="rebranding.html" class="sidebar__link">Rebranding</a>
       <a href="editorial.html" class="sidebar__link">Magazines</a>
       <a href="poster-print.html" class="sidebar__link">Posters & Print</a>
       <a href="campaigns.html" class="sidebar__link">Campaigns</a>
-      <a href="social-digital.html" class="sidebar__link">Social Media & Digital</a>
       <a href="websites.html" class="sidebar__link">Websites</a>
     </nav>
 
@@ -40,6 +40,12 @@
   <main class="main">
     <div class="main__inner main__inner--home">
 
+      <!-- Mobile-only header — sidebar logo serves this role on desktop -->
+      <header class="home-mobile-header reveal">
+        <h1 class="home-mobile-header__title">Brad Sherman</h1>
+        <p class="home-mobile-header__subtitle">Graphics &amp; Brand Design</p>
+      </header>
+
       <div class="home-grid reveal-stagger">
 
         <!-- CARD 1: Branding & Identity -->
@@ -50,11 +56,11 @@
           </div>
           <div class="home-card__overlay">
             <div class="home-card__title">Branding & Identity</div>
-            <div class="home-card__subtitle">Naples 15, Caffe Buzzino</div>
+            <div class="home-card__subtitle">Caffe Buzzino, Ctown Tees, RiverBank</div>
           </div>
           <div class="home-card__label">
             <div class="home-card__label-title">Branding and Identity</div>
-            <div class="home-card__label-sub">Naples 15 and Caffe Buzzino</div>
+            <div class="home-card__label-sub">Caffe Buzzino, Ctown Tees, and RiverBank</div>
           </div>
         </a>
 
@@ -103,21 +109,6 @@
           <div class="home-card__label">
             <div class="home-card__label-title">Campaigns</div>
             <div class="home-card__label-sub">Saatchi & Saatchi, Editorials and more</div>
-          </div>
-        </a>
-
-        <!-- CARD 5: Social Media & Digital -->
-        <a href="social-digital.html" class="home-card">
-          <div class="home-card__image-wrap">
-            <img src="images_1/SM1.jpg" alt="Social Media & Digital" class="home-card__image" style="object-position: center 3%;">
-          </div>
-          <div class="home-card__overlay">
-            <div class="home-card__title">Social Media & Digital</div>
-            <div class="home-card__subtitle">UW-Madison IceCube Research Center</div>
-          </div>
-          <div class="home-card__label">
-            <div class="home-card__label-title">Social Media & Digital</div>
-            <div class="home-card__label-sub">Social, Events, Infographics</div>
           </div>
         </a>
 

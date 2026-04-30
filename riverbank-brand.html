@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RiverBank — Brand Standards</title>
+  <link rel="icon" type="image/png" href="images_1/fav.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .sidebar, .nav-toggle { display: none !important; }
+    .main { margin-left: 0; }
+    .main__inner { max-width: none; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ── Hero ── */
+    .bg-hero {
+      background: #7FB5C9;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 80px 40px;
+    }
+    .hero__logo { max-width: 520px; width: 75%; margin-bottom: 40px; }
+    .hero__subtitle {
+      font-family: 'Gelica', Georgia, serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(0,0,0,0.45);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Sections ── */
+    .bg-section { padding: 100px 40px; }
+    .bg-section--white { background: #FFFFFF; }
+    .bg-section--off { background: #F0EDE8; }
+    .bg-section--cream { background: #EDE8DF; }
+    .bg-section--blue { background: #7FB5C9; }
+    .bg-section--sage { background: #C5CFC0; }
+    .bg-section--dark { background: #0A2647; }
+    .section-inner { max-width: 900px; margin: 0 auto; }
+
+    /* ── Typography ── */
+    .section-title {
+      font-family: 'Gelica', Georgia, serif;
+      font-weight: 600;
+      font-size: 2.5rem;
+      color: #111;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .bg-section--dark .section-title { color: #FFF; }
+    .bg-section--blue .section-title { color: #0A2647; }
+
+    .section-subtitle {
+      font-family: 'Gelica', Georgia, serif;
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: #111;
+      margin-bottom: 16px;
+      margin-top: 56px;
+    }
+    .section-subtitle:first-of-type { margin-top: 0; }
+
+    .body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1rem;
+      color: #555;
+      max-width: 620px;
+      line-height: 1.85;
+      margin-bottom: 36px;
+    }
+    .bg-section--dark .body { color: rgba(255,255,255,0.55); }
+
+    /* ── Logo Display ── */
+    .logo-display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 72px 48px;
+      margin-bottom: 36px;
+    }
+    .logo-display img { max-width: 480px; width: 100%; }
+    .logo-display--cream { background: #F5F0EB; }
+
+    /* ── Logo Variation Grid ── */
+    .logo-var-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 36px;
+    }
+    .logo-var-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 32px;
+      min-height: 180px;
+    }
+    .logo-var-cell img { max-height: 80px; width: auto; }
+
+    /* ── Wordmark Display ── */
+    .wordmark-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+    .wordmark-grid img { width: 100%; display: block; }
+    .wordmark-large {
+      margin-bottom: 16px;
+    }
+    .wordmark-large img { width: 100%; max-width: 600px; display: block; }
+    .wordmark-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+    .wordmark-row img { height: 60px; width: auto; }
+
+    /* ── Color Bars ── */
+    .color-bars { margin-bottom: 36px; }
+    .color-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 28px;
+      min-height: 64px;
+    }
+    .color-bar__name {
+      font-family: 'Neue Kabel', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+    .color-bar__codes {
+      font-family: 'SF Mono', 'Menlo', 'Courier New', monospace;
+      font-size: 0.7rem;
+      text-align: right;
+      line-height: 1.5;
+    }
+    .color-bar--light .color-bar__name,
+    .color-bar--light .color-bar__codes { color: #333; }
+    .color-bar--dark .color-bar__name,
+    .color-bar--dark .color-bar__codes { color: #FFF; }
+
+    /* ── Type Cards ── */
+    .type-card {
+      padding: 44px 36px;
+      margin-bottom: 2px;
+      background: #FFF;
+      border: 1px solid #ECECEC;
+    }
+    .type-card__role {
+      font-family: 'Neue Kabel', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #999;
+      margin-bottom: 16px;
+    }
+    .type-card__name {
+      font-family: 'Neue Kabel', sans-serif;
+      font-weight: 700;
+      font-size: 2.25rem;
+      color: #111;
+      margin-bottom: 6px;
+    }
+    .type-card__preview {
+      font-size: 1rem;
+      color: #AAA;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .type-card__note {
+      font-size: 0.82rem;
+      color: #CCC;
+      line-height: 1.5;
+      max-width: 460px;
+      padding-top: 14px;
+      border-top: 1px solid #F0F0F0;
+    }
+
+    /* ── Illustration Grid ── */
+    .illus-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+    .illus-grid img { width: 100%; display: block; }
+
+    /* ── Emblem Row ── */
+    .emblem-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 36px;
+      align-items: center;
+    }
+    .emblem-row img { width: 100%; display: block; }
+
+    /* ── Mockups ── */
+    .mockup-set {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 48px;
+    }
+    .mockup-set--imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      grid-column: span 2;
+    }
+    .mockup-cell {
+      background: #F0EDE8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      min-height: 260px;
+    }
+    .mockup-cell img { max-height: 240px; width: auto; }
+    .mockup-label {
+      font-family: 'Neue Kabel', sans-serif;
+      font-size: 0.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #BBB;
+      text-align: center;
+      padding: 10px;
+    }
+    .mockup-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.88rem;
+      color: #888;
+      line-height: 1.65;
+      padding-top: 12px;
+    }
+
+    /* ── Do/Don't ── */
+    .guidelines {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+    .guide-card {
+      padding: 28px 24px;
+      background: #FFF;
+      border: 1px solid #ECECEC;
+    }
+    .guide-card__bar { width: 24px; height: 3px; margin-bottom: 14px; }
+    .guide-card__bar--do { background: #2D5016; }
+    .guide-card__bar--dont { background: #C4693D; }
+    .guide-card__label {
+      font-family: 'Neue Kabel', sans-serif;
+      font-weight: 900;
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 10px;
+    }
+    .guide-card__label--do { color: #2D5016; }
+    .guide-card__label--dont { color: #C4693D; }
+    .guide-card__text { font-size: 0.88rem; color: #666; line-height: 1.65; }
+
+    /* ── Footer ── */
+    .brand-footer {
+      background: #0A2647;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .brand-footer__text {
+      font-family: 'Neue Kabel', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.15);
+    }
+    .brand-footer__link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.28);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .brand-footer__link:hover { color: rgba(255,255,255,0.5); }
+
+    /* ── PDF section image ── */
+    .pdf-img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 36px;
+      height: auto;
+    }
+    .pdf-img--full {
+      display: block;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto 36px;
+      height: auto;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .bg-hero { min-height: 65vh; padding: 60px 24px; }
+      .bg-section { padding: 72px 24px; }
+      .section-title { font-size: 2rem; }
+      .mockup-set { grid-template-columns: 1fr; }
+      .mockup-set--imgs { grid-column: span 1; }
+    }
+    @media (max-width: 768px) {
+      .bg-hero { min-height: 55vh; padding: 48px 20px; }
+      .hero__logo { max-width: 280px; }
+      .bg-section { padding: 56px 20px; }
+      .section-title { font-size: 1.65rem; }
+      .logo-var-grid, .wordmark-grid, .illus-grid, .guidelines { grid-template-columns: 1fr; }
+      .emblem-row { grid-template-columns: 1fr 1fr; }
+      .type-card { padding: 28px 20px; }
+      .type-card__name { font-size: 1.7rem; }
+      .mockup-set { grid-template-columns: 1fr; }
+      .mockup-set--imgs { grid-column: span 1; }
+    }
+    @media (max-width: 480px) {
+      .bg-hero { min-height: 50vh; padding: 40px 18px; }
+      .hero__logo { max-width: 240px; margin-bottom: 28px; }
+      .hero__subtitle { font-size: 0.95rem; }
+      .bg-section { padding: 44px 18px; }
+      .section-title { font-size: 1.4rem; }
+      .section-subtitle { font-size: 1.1rem; margin-top: 36px; }
+      .body { font-size: 0.95rem; line-height: 1.7; margin-bottom: 24px; }
+
+      /* Emblem row was 2-col at ≤768 → postage stamps on phone. Single column. */
+      .emblem-row { grid-template-columns: 1fr; gap: 16px; }
+
+      /* Wordmark-row had no flex-wrap and fixed 60px tall imgs */
+      .wordmark-row { flex-wrap: wrap; gap: 14px; }
+      .wordmark-row img { height: 48px; max-width: 100%; }
+
+      /* Color bar — name + codes were on one row with no wrap */
+      .color-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 18px 20px;
+        min-height: 0;
+      }
+      .color-bar__codes { text-align: left; font-size: 0.82rem; }
+      .color-bar__name { font-size: 0.95rem; }
+
+      /* Tiny labels — were 0.58–0.6rem (≈9.3–9.6px), illegible. */
+      .type-card__role,
+      .guide-card__label,
+      .brand-footer__text {
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+      }
+      .mockup-label { font-size: 0.7rem; }
+      .type-card__name { font-size: 1.45rem; }
+      .type-card__preview { font-size: 0.9rem; }
+      .type-card__note { font-size: 0.85rem; }
+      .guide-card__text { font-size: 0.92rem; }
+      .brand-footer__link { font-size: 0.88rem; }
+
+      /* Logo display padding was 72×48 — too tall on phone */
+      .logo-display { padding: 40px 24px; }
+      .logo-var-cell { padding: 32px 24px; min-height: 140px; }
+      .mockup-cell { min-height: 200px; padding: 20px 14px; }
+      .mockup-cell img { max-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar"></aside>
+  <main class="main">
+    <div class="main__inner">
+
+      <!-- HERO -->
+      <section class="bg-hero">
+        <img src="images_1/RB1.png" alt="RiverBank" class="hero__logo">
+        <p class="hero__subtitle">Brand Standards Guide</p>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="bg-section bg-section--white">
+        <div class="section-inner">
+          <h2 class="section-title">About RiverBank</h2>
+          <p class="body">
+            RiverBank is an outdoor lifestyle and clothing brand built on a simple belief: the best designs come from the landscapes we love. The brand celebrates the beauty of the outdoors through hand-drawn illustration, rugged typography, and earthy tones pulled from mountains, rivers, and open skies.
+          </p>
+          <p class="body">
+            Every illustration, emblem, and garment is rooted in real places — mountains that break the skyline, rivers that carve through valleys, coastlines lit by the moon. The landscape is the hero, not the brand.
+          </p>
+        </div>
+      </section>
+
+      <!-- PRIMARY LOGO -->
+      <section class="bg-section bg-section--cream">
+        <div class="section-inner">
+          <h2 class="section-title">Primary Logo</h2>
+          <p class="body">
+            The primary RiverBank logo is the mountain wordmark — the brand name integrated into a hand-drawn mountain range silhouette. This is the only mark that represents the brand. All other graphics are supporting elements.
+          </p>
+
+          <div class="logo-display logo-display--cream">
+            <img src="images_1/RB1.png" alt="RiverBank — Primary Logo">
+          </div>
+        </div>
+      </section>
+
+      <!-- LOGO VARIATION -->
+      <section class="bg-section bg-section--white">
+        <div class="section-inner">
+          <img src="images_1/pdf/rb-logo-variations.png" alt="RiverBank logo variations across background colors" class="pdf-img">
+        </div>
+      </section>
+
+      <!-- WORDMARK -->
+      <section class="bg-section bg-section--off">
+        <div class="section-inner">
+          <img src="images_1/pdf/rb-wordmark.png" alt="RiverBank wordmark set in Camera Obscura across color variations" class="pdf-img">
+        </div>
+      </section>
+
+      <!-- COLOR PALETTE -->
+      <section class="bg-section bg-section--blue">
+        <div class="section-inner">
+          <h2 class="section-title">Color Palette</h2>
+          <p class="body">
+            The RiverBank palette is drawn directly from the national parks and landscapes that inspire the brand. Soft blues, warm tans, and muted earth tones create an approachable, natural feel — while deeper values like Night Blue and Pine Green bring the ruggedness of the outdoors into the system.
+          </p>
+          <img src="images_1/pdf/rb-palette.png" alt="RiverBank color palette — primary and secondary colors with hex values" class="pdf-img--full">
+        </div>
+      </section>
+
+      <!-- BRAND TYPEFACES -->
+      <section class="bg-section bg-section--off">
+        <div class="section-inner">
+          <h2 class="section-title">Brand Typefaces</h2>
+          <p class="body">
+            The type system balances three distinct voices. Camera Obscura serves as the display face for the logo and headlines. Journal OT Bold steps in for subheadings. Myriad Pro Semibold ties it together as the body typeface — clean, neutral, and highly legible.
+          </p>
+          <img src="images_1/pdf/rb-typography.png" alt="Typography specimens: Camera Obscura, Journal OT Bold, Myriad Pro Semibold" class="pdf-img--full">
+        </div>
+      </section>
+
+      <!-- ILLUSTRATION STYLE -->
+      <section class="bg-section bg-section--white">
+        <div class="section-inner">
+          <h2 class="section-title">Illustration Style</h2>
+          <p class="body">
+            RiverBank illustrations use a layered, flat-color technique with hand-drawn outlines. Landscapes are built from overlapping color bands that create depth without realistic rendering. The style is warm, approachable, and distinctly handmade.
+          </p>
+
+          <div class="illus-grid">
+            <img src="images_1/RB5.png" alt="Lighthouse coastal scene">
+            <img src="images_1/RB6.png" alt="Mountain arch badge">
+            <img src="images_1/RB7.png" alt="Kayak on water">
+            <img src="images_1/RB4.png" alt="Mountain landscape emblem">
+          </div>
+        </div>
+      </section>
+
+      <!-- EMBLEMS -->
+      <section class="bg-section bg-section--off">
+        <div class="section-inner">
+          <img src="images_1/pdf/rb-emblems.png" alt="RiverBank emblems — apparel-specific graphics for shirt fronts" class="pdf-img--full">
+        </div>
+      </section>
+
+      <!-- MOCKUPS -->
+      <section class="bg-section bg-section--blue">
+        <div class="section-inner">
+          <h2 class="section-title">Mockups</h2>
+          <p class="body">
+            RiverBank was built for t-shirts and hoodies — but the brand's visual language extends naturally into the broader outdoor lifestyle space. Every garment follows a front/back structure: an emblem graphic on the front chest, paired with a full landscape illustration on the back.
+          </p>
+          <img src="images_1/pdf/rb-mockup1.png" alt="Mockup 1 — Lake Powell shirt front and back" class="pdf-img--full">
+          <img src="images_1/pdf/rb-mockup2.png" alt="Mockup 2 — Jackson Lake shirt front and back" class="pdf-img--full">
+        </div>
+      </section>
+
+      <!-- CONCLUSION -->
+      <section class="bg-section bg-section--dark">
+        <div class="section-inner">
+          <h2 class="section-title">Conclusion</h2>
+          <p class="body">
+            RiverBank is a personal project, but it was designed as a real brand. Every element — from the Grand Teton wordmark to the Lake Powell illustration to the emblem system — was built to scale. The visual language is flexible enough to grow into new parks, new illustrations, and new product categories while staying rooted in the same principle: let the landscape lead.
+          </p>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="brand-footer">
+        <p class="brand-footer__text">RIVERBANK &mdash; BRAND STANDARDS</p>
+        <a href="index.html" class="brand-footer__link">&larr; Back to Portfolio</a>
+      </footer>
+
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

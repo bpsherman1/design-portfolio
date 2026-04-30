@@ -261,26 +261,73 @@ a {
   gap: 2px;
 }
 
-/* --- Mobile Nav Toggle --- */
+/* --- Mobile Nav Toggle ---
+   Three red bars echoing the brand red dividers used elsewhere on the site.
+   No box behind it — just the bars with a soft drop-shadow for legibility.
+   Animates to an X when the sidebar is open. */
 .nav-toggle {
   display: none;
-  position: fixed;
+  /* Sits at the top of the page and scrolls away with content — no overlap with images */
+  position: absolute;
   top: 16px;
   right: 16px;
   z-index: 200;
-  background: var(--bg);
-  border: 1px solid var(--border);
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background: transparent;
+  border: none;
   border-radius: 0;
-  padding: 10px 14px;
   cursor: pointer;
-  font-size: 1.25rem;
-  line-height: 1;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  transition: transform 0.2s;
+  font-size: 0;
+  line-height: 0;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.18));
+  transition: transform 0.2s var(--ease-out), filter 0.2s var(--ease-out);
 }
 
 .nav-toggle:active {
-  transform: scale(0.95);
+  transform: scale(0.92);
+}
+
+.nav-toggle:hover {
+  filter: drop-shadow(0 2px 5px rgba(212, 43, 43, 0.30));
+}
+
+.nav-toggle__icon {
+  position: relative;
+  z-index: 1; /* sit on top of the white box */
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--red);
+  transition: background-color 0.2s var(--ease-out);
+}
+
+.nav-toggle__icon::before,
+.nav-toggle__icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--red);
+  transition: transform 0.32s var(--ease-out), top 0.32s var(--ease-out);
+}
+
+.nav-toggle__icon::before { top: -7px; }
+.nav-toggle__icon::after  { top:  7px; }
+
+/* Open state — bars morph to an X */
+.nav-toggle--open .nav-toggle__icon {
+  background-color: transparent;
+}
+.nav-toggle--open .nav-toggle__icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.nav-toggle--open .nav-toggle__icon::after {
+  top: 0;
+  transform: rotate(-45deg);
 }
 
 /* --- Main Content --- */
@@ -375,6 +422,14 @@ a {
   font-size: 0.75rem;
   color: var(--medium-gray);
   margin-top: 2px;
+}
+
+/* --- Home Mobile Header ---
+   Visible only on mobile, where the sidebar (and its BRAD SHERMAN logo) is hidden
+   behind the hamburger. Gives the home page an identity at the top so visitors
+   landing via QR code see the name and discipline before scrolling into the work. */
+.home-mobile-header {
+  display: none;
 }
 
 /* --- Home Intro (float-up reveal) --- */
@@ -507,6 +562,175 @@ a {
   color: var(--red-hover);
 }
 
+/* ============================================
+   Project Switcher
+   Sticky tabs at top of multi-project pages (branding.html, rebranding.html).
+   Mirrors the active state pattern from .sidebar__link--active.
+   ============================================ */
+.project-switcher {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  margin: 0 calc(-1 * var(--spacing-xl)) var(--spacing-2xl);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.project-switcher__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+  padding: 6px 18px 6px 6px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  color: var(--medium-gray);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: color 0.25s var(--ease-out), background-color 0.25s var(--ease-out);
+}
+
+.project-switcher__btn:hover {
+  color: var(--black);
+  background: var(--bg-off);
+}
+
+.project-switcher__btn--active,
+.project-switcher__btn--active:hover {
+  color: var(--black);
+  background: var(--border);
+  font-weight: 700;
+}
+
+.project-switcher__btn:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: -2px;
+}
+
+.project-switcher__logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* The NJ Transit emblem fills its bounding box edge-to-edge; scale it
+   down slightly so it visually matches the other logos (which include
+   their own whitespace). */
+.project-switcher__logo[src*="NJ_emblem"] {
+  transform: scale(0.85);
+}
+
+.project-switcher__logo--text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--medium-gray);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.project-switcher__btn--active .project-switcher__logo--text {
+  color: var(--black);
+}
+
+.project-switcher__name {
+  font-weight: 500;
+}
+
+/* On switcher pages, individual project dividers are redundant — the
+   switcher itself replaces the visual project break. */
+.main__inner--switcher .project__divider {
+  display: none;
+}
+
+/* Projects hidden by the switcher use the standard hidden attribute */
+.project[hidden] {
+  display: none;
+}
+
+/* Switcher pages present each project as a continuous brand-book flow,
+   so the gap between consecutive image blocks is tightened. */
+.main__inner--switcher .img-full,
+.main__inner--switcher .img-grid-2,
+.main__inner--switcher .img-grid-3 {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Mobile: horizontal scroll instead of wrap so a row of buttons fits cleanly */
+@media (max-width: 768px) {
+  .project-switcher {
+    margin: 0 calc(-1 * var(--spacing-md)) var(--spacing-xl);
+    padding: var(--spacing-xs) var(--spacing-md);
+    gap: 4px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .project-switcher::-webkit-scrollbar { display: none; }
+
+  .project-switcher__btn {
+    padding: 5px 14px 5px 5px;
+    font-size: 0.88rem;
+    gap: 10px;
+  }
+  .project-switcher__logo,
+  .project-switcher__logo--text {
+    width: 38px;
+    height: 38px;
+  }
+  .project-switcher__logo--text {
+    font-size: 0.62rem;
+  }
+}
+
+/* --- Project placeholder (e.g. "Case study coming soon" slot) --- */
+.project__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 320px;
+  background: var(--bg-off);
+  border: 1px dashed var(--border);
+  margin-top: var(--spacing-lg);
+}
+
+.project__placeholder span {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--light-gray);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 22px;
+}
+
+.project__placeholder span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  transform: translateY(-50%);
+}
+
 /* --- Image Layouts --- */
 
 .img-full,
@@ -632,7 +856,12 @@ a {
     grid-template-columns: 1fr;
     height: auto;
   }
-  .campaign-ads-row img {
+  /* Match :first-child / :last-child specificity so the mobile rule
+     actually overrides the explicit 540px (otherwise C10 stays 540px tall on mobile,
+     leaving big empty bars above/below from object-fit: contain). */
+  .campaign-ads-row img,
+  .campaign-ads-row img:first-child,
+  .campaign-ads-row img:last-child {
     height: auto;
   }
 }
@@ -687,6 +916,64 @@ a {
   .naples-logo-feature {
     grid-template-columns: 1fr;
   }
+}
+
+/* --- Naples problem: small old logo paired with objective text ---
+   Asymmetric grid intentionally giving the old mark less visual weight than
+   the new mark — frames it as evidence, not as a peer. */
+.naples-problem {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: var(--spacing-2xl);
+  align-items: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.naples-problem__logo {
+  background: var(--bg-warm);
+  padding: var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.naples-problem__logo img {
+  width: 100%;
+  max-width: 320px;
+}
+
+.naples-problem .project__description {
+  max-width: none;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .naples-problem {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  .naples-problem__logo {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* --- Naples reveal label: extra breathing room before the new mark
+   Creates a visible pause/breath so the climax lands. */
+.naples-reveal-label {
+  margin-top: var(--spacing-4xl);
+}
+
+/* --- Naples business card: a centered, smaller frame so the card
+   doesn't stretch full-bleed and look distorted at portfolio width. */
+.naples-card-frame {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.naples-card-frame img {
+  width: 100%;
+  max-width: 720px;
 }
 
 /* --- Poster Mosaic Gallery --- */
@@ -1120,7 +1407,9 @@ a {
   }
 
   .nav-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .main {
@@ -1147,8 +1436,28 @@ a {
     grid-template-columns: 1fr;
   }
 
+  /* Inline grid-template-columns (e.g. "2fr 3fr") on these layouts must collapse on mobile.
+     Inline style would otherwise win against the rule above. */
+  .img-grid-2[style*="grid-template-columns"],
+  .sm-matched-row[style*="grid-template-columns"],
+  .naples-logo-feature[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Modifier: keep 2-col on mobile for related pairs (e.g. currency front/back) */
+  .img-grid-2.img-grid-2--pair {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+  }
+
   .img-grid-3 {
     grid-template-columns: 1fr;
+  }
+
+  /* Modifier: keep 3-col on mobile for triptychs (e.g. magazine cover series) */
+  .img-grid-3.img-grid-3--keep {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xs);
   }
 
   .visual-gallery__grid {
@@ -1158,4 +1467,295 @@ a {
   .contact-layout {
     grid-template-columns: 1fr;
   }
+
+  /* Home page: mobile-only header (hidden on desktop where the sidebar shows the name) */
+  .home-mobile-header {
+    display: block;
+    /* 80px top clears the absolute-positioned nav-toggle (16 + 48 = 64) with breathing room */
+    padding: 80px var(--spacing-md) var(--spacing-xl);
+  }
+  .home-mobile-header__title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--red);
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  .home-mobile-header__subtitle {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--medium-gray);
+    letter-spacing: 0.01em;
+    font-weight: 400;
+  }
+}
+
+/* ============================================
+   PHONE BREAKPOINT (≤480 px)
+   Targets iPhone SE through 16 Pro Max
+   ============================================ */
+@media (max-width: 480px) {
+  /* Tighter outer padding so content has room to breathe */
+  .main__inner {
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-2xl);
+  }
+
+  /* Bigger sidebar tap targets (was ~42 px, need ≥44 px) */
+  .sidebar__link {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+  }
+
+  /* Headings scale down for narrow columns */
+  .page-header { margin-bottom: var(--spacing-2xl); }
+  .page-header__title { font-size: 1.75rem; }
+  .page-header__subtitle { font-size: 0.9rem; }
+  .project { margin-bottom: var(--spacing-2xl); }
+  .project__title { font-size: 1.35rem; }
+  .project__divider { margin-bottom: var(--spacing-2xl); }
+  .project__description { font-size: 0.95rem; line-height: 1.65; }
+  .project__section-label { font-size: 1.15rem; margin-top: var(--spacing-xl); }
+
+  /* Home card subtitles were 12 px — bump for legibility */
+  .home-card__label-sub { font-size: 0.825rem; }
+  .home-card__label-title { font-size: 1.05rem; }
+
+  /* About-page detail labels were 0.7rem (~11.2px) — too small */
+  .about__detail-label { font-size: 0.78rem; letter-spacing: 0.1em; }
+
+  /* Contact form labels and link-item labels were 0.75rem (~12px) */
+  .contact__form label,
+  .contact__link-item span { font-size: 0.82rem; letter-spacing: 0.08em; }
+
+  /* Action links ("View Full Style Guide →", "Visit Live Site →") were 22px tall.
+     Bump padding so they read as buttons without changing visual weight too much. */
+  .project__link {
+    padding: 12px 0;
+    font-size: 0.95rem;
+  }
+  .home-intro__link {
+    padding: 12px 0;
+    display: inline-block;
+    font-size: 0.95rem;
+  }
+
+  /* Poster mosaic — phone preview layout
+     Each row's column widths are proportional to the actual aspect ratios of the
+     images in that row, so every image renders at its natural shape (no cropping)
+     and all images within a row share the same height. Row heights vary by content:
+     row 2 is shorter because it holds the wider landscape-oriented posters. */
+  .poster-mosaic {
+    margin-bottom: var(--spacing-2xl);
+    padding: 0 4px;
+  }
+  .poster-mosaic__row {
+    gap: 4px !important;
+    margin-bottom: 4px !important;
+    height: auto !important;
+  }
+  /* Row 1: P14 (0.647) + P15 (0.647) + P17 (1.778) → row height ≈ 120 px */
+  .poster-mosaic__row--top {
+    grid-template-columns: 0.647fr 0.647fr 1.778fr !important;
+  }
+  /* Row 2: P56 (1.544) + P13 (0.746) + P16 (1.000) + P7 (1.333) → ≈ 80 px
+     (shorter band of landscape-leaning posters) */
+  .poster-mosaic__row--mid {
+    grid-template-columns: 1.544fr 0.746fr 1.000fr 1.333fr !important;
+  }
+  /* Row 3: P51 (0.800) + p52 (0.800) + P53 (0.800) + P55 (0.774) → ≈ 115 px */
+  .poster-mosaic__row--bottom {
+    grid-template-columns: 0.800fr 0.800fr 0.800fr 0.774fr !important;
+  }
+  /* Show full image — no cover-cropping */
+  .poster-mosaic img {
+    aspect-ratio: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* About photo: full-width inside its column instead of orphaned 300 px */
+  .about__photo {
+    max-width: 100%;
+  }
+  .about__text h2 { font-size: 1.6rem; }
+
+  /* Contact form: kill iOS auto-zoom, full-width submit, wrapped links */
+  .contact__form input,
+  .contact__form textarea {
+    font-size: 16px; /* iOS auto-zooms anything < 16 px on focus */
+  }
+  .contact__form button {
+    width: 100%;
+    align-self: stretch;
+    padding: 16px 24px;
+  }
+  .contact__link-item {
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+  .contact__link-item span {
+    min-width: 0;
+    flex-basis: 100%;
+  }
+  .contact__link-item a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    padding: 8px 0;
+    display: inline-block;
+    font-size: 1rem;
+  }
+
+  /* Lightbox: more room for the image, no on-image arrow icons */
+  .lightbox__img {
+    max-width: 94vw;
+    max-height: 78vh;
+  }
+  .lightbox__close {
+    top: 12px;
+    left: 12px;
+    font-size: 2.4rem;
+    padding: 8px 12px;
+  }
+  .lightbox__info {
+    top: 18px;
+    right: 14px;
+    font-size: 0.7rem;
+    max-width: 60%;
+    text-align: right;
+  }
+  /* Hide the prev/next arrow buttons on mobile — swipe + edge-tap take over */
+  .lightbox__arrow {
+    display: none !important;
+  }
+
+  /* Inline-style escape: kill inline max-width caps that look bad shrunken */
+  .img-full[style*="max-width"] {
+    max-width: 100% !important;
+  }
+
+  /* Tame oversized inline margin-bottom values that create giant voids */
+  [style*="margin-bottom: 128px"],
+  [style*="margin-bottom: 96px"] {
+    margin-bottom: var(--spacing-xl) !important;
+  }
+
+  /* Inline 5xl-height spacers (e.g. between poster mosaic and first project) — 120px is huge on phone */
+  div[style*="height: var(--spacing-5xl)"],
+  div[style*="height: var(--spacing-4xl)"] {
+    height: var(--spacing-lg) !important;
+  }
+
+  /* Footer slightly larger so it's not microscopic in bright exhibition lighting */
+  .footer { font-size: 0.85rem; color: var(--medium-gray); }
+
+  /* Home mobile header — slightly tighter on small phones */
+  .home-mobile-header {
+    padding: 76px var(--spacing-md) var(--spacing-lg);
+  }
+  .home-mobile-header__title {
+    font-size: 2.25rem;
+  }
+  .home-mobile-header__subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* ── Uniform vertical rhythm within a project on mobile ──
+     Every image block gets the same gap below it; subsection labels get the same gap above.
+     Override targeted defaults so the page reads as a steady cadence instead of a mix
+     of 24/32/48/64/96/128px gaps inherited from inline desktop styles. */
+  .project .img-full,
+  .project .img-grid-2,
+  .project .img-grid-3,
+  .project .img-featured,
+  .project .sm-matched-row,
+  .project .campaign-ads-row,
+  .project .naples-logo-feature {
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg); /* 32px */
+  }
+  .project .project__section-label {
+    margin-top: var(--spacing-2xl);   /* 64px */
+    margin-bottom: var(--spacing-md);
+  }
+  /* When a project__description follows a section-label, tighten the gap */
+  .project .project__section-label + .project__description {
+    margin-bottom: var(--spacing-md);
+  }
+  /* The poster mosaic at the very top of a page needs its own breathing room */
+  .poster-mosaic + .project__divider,
+  .poster-mosaic + section.project {
+    margin-top: var(--spacing-2xl);
+  }
+  /* Project-to-project break */
+  .project__divider {
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+    width: 48px;
+  }
+
+  /* Architecture in Madison illustration — supporting graphic, not the poster.
+     On desktop the naples-logo-feature grid sizes it appropriately;
+     on mobile (1-col) it would otherwise span full column width. */
+  .naples-logo-feature .project-illus,
+  .project-illus {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ============================================
+   Touch-device guards
+   Hover-only effects don't fire on touch — kill them so phones don't
+   get stuck mid-transform when the finger lifts.
+   ============================================ */
+@media (hover: none) {
+  .home-card:hover { opacity: 1; }
+  .home-card:hover .home-card__image { transform: none; }
+  .img-full:hover,
+  .img-grid-2 img:hover,
+  .img-grid-3 img:hover,
+  .img-featured img:hover,
+  .visual-gallery__grid img:hover,
+  .about__photo:hover,
+  .poster-mosaic img:hover,
+  .poster-mosaic__img--active {
+    transform: none;
+    box-shadow: none;
+  }
+  .sidebar__logo a:hover {
+    transform: none;
+    font-style: normal;
+  }
+}
+
+/* ============================================
+   iOS dynamic-viewport fix
+   95vh / 80vh jump as the URL bar shows/hides.
+   Use svh ("small viewport height") which matches the URL-bar-visible state.
+   ============================================ */
+@supports (height: 100svh) {
+  .ct-cover { min-height: 95svh; }
+  .bg-hero  { min-height: 80svh; }
+}
+
+/* ============================================
+   Sidebar backdrop scrim — visible cue that nav is open
+   and clickable area for tap-to-close (handler in script.js)
+   ============================================ */
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease-out);
+}
+.sidebar-backdrop--visible {
+  opacity: 1;
+  pointer-events: auto;
 }

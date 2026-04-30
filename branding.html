@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Branding & Identity — Brad Sherman</title>
-  <meta name="description" content="Branding and identity work by Brad Sherman, including Caffe Buzzino brand system and Naples 15 restaurant rebrand.">
+  <meta name="description" content="Branding and identity work by Brad Sherman, including Caffe Buzzino, Ctown Tees, and RiverBank.">
   <meta property="og:title" content="Branding & Identity — Brad Sherman">
-  <meta property="og:description" content="Branding and identity work by Brad Sherman, including Caffe Buzzino brand system and Naples 15 restaurant rebrand.">
+  <meta property="og:description" content="Branding and identity work by Brad Sherman, including Caffe Buzzino, Ctown Tees, and RiverBank.">
   <meta property="og:image" content="https://bpsherman1.github.io/design-portfolio/images_1/MOC5.png">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="images_1/fav.png">
@@ -14,16 +14,16 @@
 </head>
 <body>
 
-  <button class="nav-toggle" onclick="document.querySelector('.sidebar').classList.toggle('sidebar--open')" aria-label="Toggle navigation">&#9776;</button>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span class="nav-toggle__icon"></span></button>
 
   <aside class="sidebar">
     <div class="sidebar__logo"><a href="index.html">BRAD<br>SHERMAN</a></div>
     <nav class="sidebar__nav">
       <a href="branding.html" class="sidebar__link sidebar__link--active">Branding & Identity</a>
+      <a href="rebranding.html" class="sidebar__link">Rebranding</a>
       <a href="editorial.html" class="sidebar__link">Magazines</a>
       <a href="poster-print.html" class="sidebar__link">Posters & Print</a>
       <a href="campaigns.html" class="sidebar__link">Campaigns</a>
-      <a href="social-digital.html" class="sidebar__link">Social Media & Digital</a>
       <a href="websites.html" class="sidebar__link">Websites</a>
     </nav>
     <div class="sidebar__bottom">
@@ -33,17 +33,33 @@
   </aside>
 
   <main class="main">
-    <div class="main__inner">
+    <div class="main__inner main__inner--switcher">
 
       <div class="page-header reveal">
         <h1 class="page-header__title">Branding and Identity</h1>
-        <p class="page-header__subtitle">Naples 15 and Caffe Buzzino</p>
+        <p class="page-header__subtitle">Caffe Buzzino, Ctown Tees, and RiverBank</p>
       </div>
+
+      <!-- Project switcher — sticky tabs that swap which case study is shown -->
+      <nav class="project-switcher" aria-label="Project switcher">
+        <button type="button" class="project-switcher__btn" data-project="buzzino" aria-pressed="false">
+          <img src="images_1/logo2.png" alt="" class="project-switcher__logo">
+          <span class="project-switcher__name">Caffe Buzzino</span>
+        </button>
+        <button type="button" class="project-switcher__btn" data-project="ctown" aria-pressed="false">
+          <img src="images_1/CT1.png" alt="" class="project-switcher__logo">
+          <span class="project-switcher__name">Ctown Tees</span>
+        </button>
+        <button type="button" class="project-switcher__btn" data-project="riverbank" aria-pressed="false">
+          <img src="images_1/RB1.png" alt="" class="project-switcher__logo">
+          <span class="project-switcher__name">RiverBank</span>
+        </button>
+      </nav>
 
       <!-- ============================================
            PROJECT 1: CAFFE BUZZINO
            ============================================ -->
-      <section class="project reveal">
+      <section class="project reveal" data-project-id="buzzino">
         <div class="project__header">
           <h2 class="project__title">Caffe Buzzino</h2>
           <p class="project__meta">2025 — UW-Madison</p>
@@ -82,62 +98,68 @@
       </section>
 
       <!-- ============================================
-           PROJECT 2: REBRANDING NAPLES 15
+           PROJECT 2: CTOWN TEES
            ============================================ -->
       <div class="project__divider"></div>
 
-      <section class="project reveal">
+      <section class="project reveal" data-project-id="ctown">
         <div class="project__header">
-          <h2 class="project__title">Rebranding Naples 15</h2>
-          <p class="project__meta">2025 — UW-Madison</p>
+          <h2 class="project__title">Ctown Tees</h2>
+          <p class="project__meta">Personal Project</p>
+          <p class="project__description">
+            A collegiate apparel brand built around one simple idea: every college town has a story worth wearing. The system pairs a custom brush-script wordmark with city-specific marks — embroidered on the front of every garment and translated into stadium illustrations on the back.
+          </p>
+          <a href="ctown-brand.html" class="project__link">View Full Brand Standards &rarr;</a>
         </div>
 
-        <p class="project__section-label">Background</p>
-        <p class="project__description">
-          Naples 15 is an Italian restaurant in Madison, WI, founded by two native Neapolitans, Antonio Catoia and Raffaele La Manna, who brought their family's pizza-making heritage to Wisconsin. The name itself, "Naples 15," is a direct reference to their affiliation with the Associazione Verace Pizza Napoletana (AVPN), the strict governing body in Naples that certifies authentic Neapolitan pizza, and they were reportedly the 15th pizzeria in the United States to receive this prestigious certification. The brand's story is, therefore, built on authenticity, tradition, and a direct transatlantic connection to the very birthplace of pizza.
-        </p>
+        <!-- Primary logo -->
+        <img loading="lazy" src="images_1/CT1.png" alt="Ctown Tees — Primary Logo" class="img-full">
 
-        <img loading="lazy" src="images_1/NAPLES_logo.png" alt="Naples 15 — Current Logo" class="img-full" style="max-width: 480px;">
-
-        <p class="project__section-label">Objective</p>
-        <p class="project__description">
-          The main challenge with the logo is that it isn't memorable, and doesn't effectively represent their business. The objective of the project was to capture Naples 15's authentic Italian aesthetic, and create a new visual identity with a clean and elegant logo. Their current logo is a light representation of Mt. Vesuvius, with the wordmark "Naples 15" below. The logo lacks a connection to food or pizza, which is their specialty. I wanted to create a logo that both represents Naples and pizza, but also feels authentic, as this will help make Naples 15 stand out as a more trustworthy and high quality restaurant.
-        </p>
-
-        <p class="project__section-label">3 Style Explorations</p>
-        <div class="img-grid-3">
-          <img loading="lazy" src="images_1/N1.png" alt="Naples 15 — Style Exploration 1 (Blue)">
-          <img loading="lazy" src="images_1/N2.png" alt="Naples 15 — Style Exploration 2 (Red)">
-          <img loading="lazy" src="images_1/N3.png" alt="Naples 15 — Style Exploration 3 (Pizza Icon)">
+        <!-- City wordmarks: Madison + Knoxville -->
+        <div class="img-grid-2 img-grid-2--pair">
+          <img loading="lazy" src="images_1/CT2.png" alt="Ctown Tees — Madison Wordmark">
+          <img loading="lazy" src="images_1/CT3.png" alt="Ctown Tees — Knoxville Wordmark">
         </div>
 
-        <p class="project__section-label">Final Logo Design</p>
-        <p class="project__description">
-          The logo is composed of a circular pizza icon representing the food and culture of Naples. Pizza slices emerge from the light and dark reds at the top of the pizza. In the bottom half, two blue slices outline Mt. Vesuvius. The use of blue refers to both the Gulf of Naples and Napoli's soccer team, the Azzurri, turning the pizza into a symbol of local pride. The top-left slice acts as the eruption, giving the design energy.
-        </p>
+        <!-- Stadium illustrations: Camp Randall + Neyland -->
+        <div class="img-grid-2 img-grid-2--pair">
+          <img loading="lazy" src="images_1/CT4.png" alt="Ctown Tees — Camp Randall Stadium Illustration">
+          <img loading="lazy" src="images_1/CT5.png" alt="Ctown Tees — Neyland Stadium Illustration">
+        </div>
+      </section>
 
-        <div class="naples-logo-feature">
-          <img loading="lazy" src="images_1/N4.png" alt="Naples 15 — Final Logo Design">
-          <div>
-            <p class="project__description">
-              The logo seeks to merge food with location and heritage. The pizza is an icon and is easily identifiable, while the volcano registers as an index, a direct symbol of Naples. The logo's red tones connect to tomato and pizza, while the blues invoke tradition and culture. The design seems simple at first, but is layered with representation giving an impression of authenticity and quality.
-            </p>
-          </div>
+      <!-- ============================================
+           PROJECT 3: RIVERBANK
+           ============================================ -->
+      <div class="project__divider"></div>
+
+      <section class="project reveal" data-project-id="riverbank">
+        <div class="project__header">
+          <h2 class="project__title">RiverBank</h2>
+          <p class="project__meta">Personal Project</p>
+          <p class="project__description">
+            An outdoor lifestyle brand grounded in hand-drawn illustration of mountains, rivers, and coastlines. The wordmark integrates into a layered mountain silhouette; the secondary marks and emblems support a flexible system that scales from t-shirt embroidery to full landscape illustration.
+          </p>
+          <a href="riverbank-brand.html" class="project__link">View Full Brand Standards &rarr;</a>
         </div>
 
-        <img loading="lazy" src="images_1/N5.png" alt="Naples 15 — Wordmark Dark Background" class="img-full">
+        <!-- Primary logo -->
+        <img loading="lazy" src="images_1/RB1.png" alt="RiverBank — Primary Logo" class="img-full">
 
-        <div class="img-grid-2">
-          <img loading="lazy" src="images_1/N6.png" alt="Naples 15 — Wordmark Light Background">
-          <img loading="lazy" src="images_1/N8.png" alt="Naples 15 — Typography">
+        <!-- Logo variations pair -->
+        <div class="img-grid-2 img-grid-2--pair">
+          <img loading="lazy" src="images_1/RB2.png" alt="RiverBank — Logo Variations">
+          <img loading="lazy" src="images_1/RB3.png" alt="RiverBank — Logo Variations">
         </div>
 
-        <img loading="lazy" src="images_1/N7.png" alt="Naples 15 — Color Palette" class="img-full">
-
-        <div class="img-grid-2">
-          <img loading="lazy" src="images_1/N9.jpg" alt="Naples 15 — Sign Mockup">
-          <img loading="lazy" src="images_1/N10.png" alt="Naples 15 — Business Card">
+        <!-- Arch + Emblem -->
+        <div class="img-grid-2 img-grid-2--pair">
+          <img loading="lazy" src="images_1/RB6.png" alt="RiverBank — Arch Logo">
+          <img loading="lazy" src="images_1/RB4.png" alt="RiverBank — Emblem">
         </div>
+
+        <!-- Landscape illustration -->
+        <img loading="lazy" src="images_1/RB5.png" alt="RiverBank — Landscape Illustration" class="img-full">
       </section>
 
       <footer class="footer">

@@ -32,11 +32,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
   floats.forEach(el => floatObserver.observe(el));
 
-  // Close mobile nav when clicking a link
-  document.querySelectorAll('.sidebar__link').forEach(link => {
-    link.addEventListener('click', () => {
-      document.querySelector('.sidebar').classList.remove('sidebar--open');
+  /* ========================================
+     Mobile Nav: open / close UX
+     ======================================== */
+  const sidebar = document.querySelector('.sidebar');
+  const navToggle = document.querySelector('.nav-toggle');
+
+  // Backdrop scrim — clickable area to close, visual cue that nav is open
+  const backdrop = document.createElement('div');
+  backdrop.className = 'sidebar-backdrop';
+  document.body.appendChild(backdrop);
+
+  function openNav() {
+    sidebar.classList.add('sidebar--open');
+    backdrop.classList.add('sidebar-backdrop--visible');
+    if (navToggle) navToggle.classList.add('nav-toggle--open');
+  }
+  function closeNav() {
+    sidebar.classList.remove('sidebar--open');
+    backdrop.classList.remove('sidebar-backdrop--visible');
+    if (navToggle) navToggle.classList.remove('nav-toggle--open');
+  }
+
+  // Replace the inline onclick toggle with a real handler
+  if (navToggle) {
+    navToggle.removeAttribute('onclick');
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      sidebar.classList.contains('sidebar--open') ? closeNav() : openNav();
     });
+  }
+
+  // Close on link click
+  document.querySelectorAll('.sidebar__link').forEach(link => {
+    link.addEventListener('click', closeNav);
+  });
+
+  // Close on backdrop tap
+  backdrop.addEventListener('click', closeNav);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sidebar.classList.contains('sidebar--open')) {
+      closeNav();
+    }
   });
 
   /* ========================================
@@ -125,8 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const img = e.target.closest('img');
     if (!img) return;
 
-    // Skip images in the sidebar, nav, or lightbox itself
-    if (img.closest('.sidebar') || img.closest('.lightbox') || img.closest('.home-card')) return;
+    // Skip images in the sidebar, nav, lightbox, or project switcher buttons
+    if (img.closest('.sidebar') || img.closest('.lightbox') || img.closest('.home-card') || img.closest('.project-switcher')) return;
 
     e.preventDefault();
     openLightbox(img);
@@ -136,17 +175,101 @@ document.addEventListener('DOMContentLoaded', () => {
   lbLeft.addEventListener('click', () => navigate(-1));
   lbRight.addEventListener('click', () => navigate(1));
 
-  // Click backdrop to close
+  /* ── Mobile: swipe + edge-tap navigation
+     Arrow buttons are hidden on phones (CSS), so swiping or tapping the
+     left/right edge navigates between images. Center-tap on the backdrop
+     still closes; the close button is excluded from these gestures. */
+  const isMobileLightbox = () => window.matchMedia('(max-width: 768px)').matches;
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let didSwipe = false;
+  const SWIPE_THRESHOLD = 50;
+
+  lightbox.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    didSwipe = false;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (e) => {
+    if (!lightbox.classList.contains('lightbox--open')) return;
+    if (currentImages.length < 2) return;
+    if (e.changedTouches.length !== 1) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+      navigate(dx > 0 ? -1 : 1); // swipe right = prev, swipe left = next
+      didSwipe = true;
+    }
+  }, { passive: true });
+
   lightbox.addEventListener('click', (e) => {
+    // Suppress the synthetic click that fires after a swipe
+    if (didSwipe) { didSwipe = false; return; }
+    // Never intercept the close button or info badge
+    if (e.target.closest('.lightbox__close, .lightbox__info, .lightbox__arrow')) return;
+
+    // Mobile: tap left/right edge navigates
+    if (isMobileLightbox() && currentImages.length > 1) {
+      const w = window.innerWidth;
+      const x = e.clientX;
+      if (x < w * 0.22) { navigate(-1); return; }
+      if (x > w * 0.78) { navigate(1);  return; }
+    }
+
+    // Default: tapping the backdrop (not the image) closes
     if (e.target === lightbox) closeLightbox();
   });
 
-  // Keyboard navigation
+  // Keyboard navigation (desktop)
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('lightbox--open')) return;
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') navigate(-1);
     if (e.key === 'ArrowRight') navigate(1);
+  });
+
+  /* ========================================
+     Project Switcher
+     Used on branding.html and rebranding.html. Each switcher tabs between
+     projects on the same page — only one project's case study is rendered
+     at a time. The switcher is reusable: it discovers its own buttons and
+     the project sections in the surrounding container at runtime, so the
+     same DOM pattern works for any number of projects.
+     ======================================== */
+  document.querySelectorAll('.project-switcher').forEach(switcher => {
+    const buttons = Array.from(switcher.querySelectorAll('.project-switcher__btn'));
+    if (buttons.length === 0) return;
+
+    const container = switcher.closest('.main__inner') || document;
+    const projects = Array.from(container.querySelectorAll('[data-project-id]'));
+
+    const activate = (target, { scrollToSwitcher = false } = {}) => {
+      buttons.forEach(btn => {
+        btn.classList.toggle('project-switcher__btn--active', btn.dataset.project === target);
+        btn.setAttribute('aria-pressed', String(btn.dataset.project === target));
+      });
+      projects.forEach(p => {
+        const isActive = p.dataset.projectId === target;
+        p.hidden = !isActive;
+        // Bypass the IntersectionObserver fade-in for switched-in content
+        // so the case study appears immediately rather than waiting for scroll.
+        if (isActive) p.classList.add('visible');
+      });
+      if (scrollToSwitcher) {
+        switcher.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activate(btn.dataset.project, { scrollToSwitcher: true });
+      });
+    });
+
+    // Initialize: first button is the default active project
+    activate(buttons[0].dataset.project);
   });
 
   /* ========================================
