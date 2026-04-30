@@ -669,6 +669,16 @@ a {
   margin-bottom: var(--spacing-sm);
 }
 
+/* Brand-book page slices: stack flush with zero gap so the rendered PDF
+   reads as one continuous document, not a sequence of separate images. */
+.img-full--book {
+  margin-bottom: 0 !important;
+  display: block;
+}
+.img-full--book + .img-full--book {
+  margin-top: -1px; /* hide hairline antialiasing seam between slices */
+}
+
 /* Mobile: horizontal scroll instead of wrap so a row of buttons fits cleanly */
 @media (max-width: 768px) {
   .project-switcher {
