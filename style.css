@@ -1471,24 +1471,59 @@ a {
   /* Home page: mobile-only header (hidden on desktop where the sidebar shows the name) */
   .home-mobile-header {
     display: block;
-    /* 80px top clears the absolute-positioned nav-toggle (16 + 48 = 64) with breathing room */
-    padding: 80px var(--spacing-md) var(--spacing-3xl);
+    /* 88px top clears the absolute-positioned nav-toggle (16 + 48 = 64) with editorial breathing room */
+    padding: 88px var(--spacing-md) var(--spacing-2xl);
+    position: relative;
+  }
+  .home-mobile-header::before {
+    content: '';
+    position: absolute;
+    top: 72px;
+    left: var(--spacing-md);
+    width: 32px;
+    height: 3px;
+    background: var(--red);
   }
   .home-mobile-header__title {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     color: var(--red);
-    letter-spacing: 0.01em;
-    line-height: 1.05;
-    margin-bottom: 8px;
+    letter-spacing: -0.005em;
+    line-height: 1;
+    margin-bottom: var(--spacing-sm);
   }
   .home-mobile-header__subtitle {
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 1.0625rem;
     color: var(--medium-gray);
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
+    line-height: 1.5;
     font-weight: 400;
+  }
+
+  /* Home grid: vertical breathing room between cards on mobile */
+  .home-grid {
+    gap: var(--spacing-lg);
+  }
+  .home-card__label {
+    padding: var(--spacing-md) var(--spacing-md) 0;
+  }
+  .home-card__label-title {
+    font-size: 1.0625rem;
+    letter-spacing: 0.005em;
+    line-height: 1.3;
+  }
+  .home-card__label-sub {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+
+  /* Home intro: 120px top margin is excessive on a phone */
+  .home-intro {
+    margin-top: var(--spacing-3xl);
+    padding: 0 var(--spacing-md);
   }
 }
 
@@ -1518,9 +1553,9 @@ a {
   .project__description { font-size: 0.95rem; line-height: 1.65; }
   .project__section-label { font-size: 1.15rem; margin-top: var(--spacing-xl); }
 
-  /* Home card subtitles were 12 px — bump for legibility */
-  .home-card__label-sub { font-size: 0.825rem; }
-  .home-card__label-title { font-size: 1.05rem; }
+  /* Home card label: calmer scale on the smallest phones */
+  .home-card__label-sub { font-size: 0.85rem; line-height: 1.5; }
+  .home-card__label-title { font-size: 1rem; letter-spacing: 0.005em; }
 
   /* About-page detail labels were 0.7rem (~11.2px) — too small */
   .about__detail-label { font-size: 0.78rem; letter-spacing: 0.1em; }
@@ -1653,14 +1688,21 @@ a {
 
   /* Home mobile header — slightly tighter on small phones */
   .home-mobile-header {
-    padding: 76px var(--spacing-md) var(--spacing-lg);
+    padding: 84px var(--spacing-md) var(--spacing-xl);
+  }
+  .home-mobile-header::before {
+    top: 68px;
+    width: 28px;
   }
   .home-mobile-header__title {
-    font-size: 2.25rem;
+    font-size: 2.375rem;
+    margin-bottom: var(--spacing-xs);
   }
   .home-mobile-header__subtitle {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
+
+  .home-grid { gap: var(--spacing-md); }
 
   /* ── Uniform vertical rhythm within a project on mobile ──
      Every image block gets the same gap below it; subsection labels get the same gap above.
