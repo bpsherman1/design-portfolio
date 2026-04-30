@@ -1472,7 +1472,7 @@ a {
   .home-mobile-header {
     display: block;
     /* 80px top clears the absolute-positioned nav-toggle (16 + 48 = 64) with breathing room */
-    padding: 80px var(--spacing-md) var(--spacing-xl);
+    padding: 80px var(--spacing-md) var(--spacing-3xl);
   }
   .home-mobile-header__title {
     font-family: var(--font-heading);
