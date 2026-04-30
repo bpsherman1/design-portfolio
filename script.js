@@ -164,8 +164,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const img = e.target.closest('img');
     if (!img) return;
 
-    // Skip images in the sidebar, nav, lightbox, or project switcher buttons
-    if (img.closest('.sidebar') || img.closest('.lightbox') || img.closest('.home-card') || img.closest('.project-switcher')) return;
+    // Skip images in the sidebar, nav, lightbox, project switcher buttons, or
+    // brand-book PDF slices (Ctown / RiverBank — they're stitched pages, not
+    // standalone artworks, so they shouldn't open in the lightbox).
+    if (img.closest('.sidebar') || img.closest('.lightbox') || img.closest('.home-card') || img.closest('.project-switcher') || img.classList.contains('img-full--book')) return;
 
     e.preventDefault();
     openLightbox(img);

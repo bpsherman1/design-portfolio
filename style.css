@@ -681,6 +681,12 @@ a {
   height: auto !important;
   max-height: none !important;
   object-fit: fill !important;
+  cursor: default !important;       /* not clickable — no pointer hand */
+  pointer-events: none;             /* swallow clicks (lightbox skip is in JS too) */
+}
+.img-full--book:hover {
+  transform: none !important;       /* kill the lift-on-hover effect */
+  box-shadow: none !important;
 }
 .img-full--book + .img-full--book {
   margin-top: -1px; /* hide hairline antialiasing seam between slices */
