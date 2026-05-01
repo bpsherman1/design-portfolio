@@ -1661,9 +1661,10 @@ a {
   .contact__link-item a {
     overflow-wrap: anywhere;
     word-break: break-word;
-    padding: 8px 0;
+    padding: 12px 0;
     display: inline-block;
     font-size: 1rem;
+    min-height: 44px;
   }
 
   /* Lightbox: more room for the image, no on-image arrow icons */
