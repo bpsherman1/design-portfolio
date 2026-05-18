@@ -568,9 +568,6 @@ a {
    Mirrors the active state pattern from .sidebar__link--active.
    ============================================ */
 .project-switcher {
-  position: sticky;
-  top: 0;
-  z-index: 50;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
   margin: 0 calc(-1 * var(--spacing-xl)) var(--spacing-2xl);
